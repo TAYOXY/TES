@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our History – Treasureland Elementary School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .navbar-scroll {
+            transition: all 0.3s ease;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -4px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #667eea;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full bg-white shadow-md navbar-scroll z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-10 w-auto mr-3">
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold text-gray-800">TES</span>
+                        <span class="text-xs text-gray-600">Treasureland Elementary School</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-purple-600 transition">Home</a>
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            About TES <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="founders-message.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">Founder's Message</a>
+                            <a href="our-history.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">Our History</a>
+                            <a href="montessori-philosophy.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">Montessori Philosophy</a>
+                        </div>
+                    </div>
+                    <a href="index.html#academics" class="text-gray-700 hover:text-purple-600 transition">Academics</a>
+                    <a href="index.html#news-events" class="text-gray-700 hover:text-purple-600 transition">News & Events</a>
+                    <a href="index.html#gallery" class="text-gray-700 hover:text-purple-600 transition">Gallery</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-purple-600 transition">Contact Us</a>
+                    <button class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition">
+                        Apply Now
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-purple-600">Home</a>
+                <a href="founders-message.html" class="block py-2 text-gray-700 hover:text-purple-600">Founder's Message</a>
+                <a href="our-history.html" class="block py-2 text-gray-700 hover:text-purple-600">Our History</a>
+                <a href="montessori-philosophy.html" class="block py-2 text-gray-700 hover:text-purple-600">Montessori Philosophy</a>
+                <a href="index.html#academics" class="block py-2 text-gray-700 hover:text-purple-600">Academics</a>
+                <a href="index.html#news-events" class="block py-2 text-gray-700 hover:text-purple-600">News & Events</a>
+                <a href="index.html#gallery" class="block py-2 text-gray-700 hover:text-purple-600">Gallery</a>
+                <a href="index.html#contact" class="block py-2 text-gray-700 hover:text-purple-600">Contact Us</a>
+                <button class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition w-full mt-4">
+                    Apply Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero-gradient py-20 pt-32">
+        <div class="container mx-auto px-6">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Our History</h1>
+                <div class="w-24 h-1 bg-white mx-auto mb-6"></div>
+                <p class="text-xl text-gray-100 max-w-3xl mx-auto">
+                    The journey of Treasureland Elementary School from inception to excellence
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- School Establishment -->
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-xl mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Beginning</h2>
+                    <div class="text-gray-700 leading-relaxed space-y-4">
+                        <p class="text-lg">
+                            Treasureland Elementary School (TES) as a Montessori school was established on the <strong>19th September 2011</strong> under the proprietorship of <strong>Mrs Ebun Elizabeth Ogunyemi</strong> and <strong>Mr Rapheal Adebola Ogunyemi</strong>.
+                        </p>
+                        <p>
+                            The couple had secured a two and half acres of land at Government Reservation Area (GRA), Ijebu Ode which serves as the permanent site of the school. When the school started it had seven pupils on roll.
+                        </p>
+                        <p>
+                            Treasureland has grown tremendously in size and standard with a growing population of over <strong>300 pupils</strong> and an excellent work force. Treasureland elementary school has been family supporting from the start. The management is effectively guided by a formidable Board of Governors.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Growth Timeline -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-8">Our Journey of Growth</h3>
+                    <div class="space-y-6">
+                        <div class="timeline-item">
+                            <div class="bg-purple-50 p-6 rounded-lg card-hover">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-calendar text-purple-600 mr-3"></i>
+                                    <h4 class="text-lg font-semibold text-gray-800">2011 - The Foundation</h4>
+                                </div>
+                                <p class="text-gray-600">School established with 7 founding pupils on September 19th, 2011</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="bg-blue-50 p-6 rounded-lg card-hover">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-building text-blue-600 mr-3"></i>
+                                    <h4 class="text-lg font-semibold text-gray-800">2011-2015 - Early Growth</h4>
+                                </div>
+                                <p class="text-gray-600">Establishment of permanent site at GRA, Ijebu Ode with 2.5 acres of land</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="bg-green-50 p-6 rounded-lg card-hover">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-users text-green-600 mr-3"></i>
+                                    <h4 class="text-lg font-semibold text-gray-800">2015-2020 - Expansion</h4>
+                                </div>
+                                <p class="text-gray-600">Growth to over 300 pupils and development of excellent workforce</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="bg-orange-50 p-6 rounded-lg card-hover">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-award text-orange-600 mr-3"></i>
+                                    <h4 class="text-lg font-semibold text-gray-800">2020-Present - Excellence</h4>
+                                </div>
+                                <p class="text-gray-600">Recognition as a leading Montessori institution with strong governance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Our Philosophy Section -->
+                <div class="bg-gray-50 p-8 rounded-xl mb-12">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Philosophy</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-graduation-cap text-purple-600 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Vision</h4>
+                                    <p class="text-gray-600">To promote life-long learning in a natural and caring environment that brings out the inborn talent for growth and self-reliance for a child to face world's challenges.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-quote-left text-purple-600 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Core Belief</h4>
+                                    <p class="text-gray-600">If you are planning for life, educate children because they are the future leaders.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-star text-purple-600 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Foundation</h4>
+                                    <p class="text-gray-600">Good foundation that ensures discipline, God fearing and caring children.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-brain text-purple-600 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Development</h4>
+                                    <p class="text-gray-600">Develop high intellectual, mental and physically fit children.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-6 border-t border-gray-200">
+                        <div class="grid md:grid-cols-3 gap-4 text-center">
+                            <div class="bg-white p-4 rounded-lg">
+                                <i class="fas fa-heart text-purple-600 text-2xl mb-2"></i>
+                                <p class="text-sm text-gray-600">Atmosphere of humility and respect for fellow children</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <i class="fas fa-leaf text-purple-600 text-2xl mb-2"></i>
+                                <p class="text-sm text-gray-600">Natural and beautiful environment that helps to inculcate aesthetics value and culture maintenance</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <i class="fas fa-dove text-purple-600 text-2xl mb-2"></i>
+                                <p class="text-sm text-gray-600">Freedom to explore and discover themselves at their pace</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="bg-purple-600 p-8 rounded-xl text-white">
+                    <h3 class="text-2xl font-bold mb-6">Explore More About Us</h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <a href="montessori-philosophy.html" class="bg-white bg-opacity-20 p-4 rounded-lg hover:bg-opacity-30 transition text-center">
+                            <i class="fas fa-child text-3xl mb-2"></i>
+                            <p class="font-semibold">Montessori Philosophy</p>
+                        </a>
+                        <a href="founders-message.html" class="bg-white bg-opacity-20 p-4 rounded-lg hover:bg-opacity-30 transition text-center">
+                            <i class="fas fa-user-tie text-3xl mb-2"></i>
+                            <p class="font-semibold">Founder's Message</p>
+                        </a>
+                        <a href="index.html#gallery" class="bg-white bg-opacity-20 p-4 rounded-lg hover:bg-opacity-30 transition text-center">
+                            <i class="fas fa-images text-3xl mb-2"></i>
+                            <p class="font-semibold">Photo Gallery</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Learn More About Our History</h2>
+                    <p class="text-gray-600">Have questions about our journey? We'd love to share more with you!</p>
+                </div>
+                
+                <form id="contactForm" action="https://formspree.io/f/mvgkqdjd" method="POST" class="bg-white rounded-2xl shadow-xl p-8">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Full Name *</label>
+                            <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Subject *</label>
+                            <select name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                <option value="">Select a subject</option>
+                                <option value="history">History Question</option>
+                                <option value="admission">Admission Inquiry</option>
+                                <option value="tour">School Tour Request</option>
+                                <option value="general">General Information</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <label class="block text-gray-700 font-medium mb-2">Message *</label>
+                        <textarea name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"></textarea>
+                    </div>
+                    <div class="mt-8">
+                        <button type="submit" class="w-full bg-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-purple-700 transition transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Message
+                        </button>
+                    </div>
+                </form>
+                
+                <div id="successMessage" class="hidden mt-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
+                    <i class="fas fa-check-circle mr-2"></i> Thank you for your message! We'll get back to you soon.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-graduation-cap text-2xl text-purple-400 mr-2"></i>
+                        <span class="text-lg font-semibold">Treasureland Elementary</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Nurturing the leaders of tomorrow through excellence in education.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="founders-message.html" class="hover:text-white transition">Founder's Message</a></li>
+                        <li><a href="our-history.html" class="hover:text-white transition">Our History</a></li>
+                        <li><a href="index.html#gallery" class="hover:text-white transition">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Programs</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Early Years</a></li>
+                        <li><a href="#" class="hover:text-white transition">Primary School</a></li>
+                        <li><a href="#" class="hover:text-white transition">After School</a></li>
+                        <li><a href="#" class="hover:text-white transition">Summer Camp</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-phone mr-2"></i> +234 807 455 2156</li>
+                        <li><i class="fas fa-envelope mr-2"></i> admission@treasurelandschools.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Ijebu Ode, Ogun State</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Treasureland Elementary School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const formData = new FormData(form);
+            
+            // Show loading state
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+            submitButton.disabled = true;
+            
+            // Submit to Formspree
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    document.getElementById('successMessage').classList.remove('hidden');
+                    
+                    // Reset form
+                    form.reset();
+                    
+                    // Scroll to success message
+                    document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        document.getElementById('successMessage').classList.add('hidden');
+                    }, 5000);
+                } else {
+                    // Show error message
+                    alert('There was an error submitting the form. Please try again.');
+                }
+            })
+            .catch(error => {
+                // Show error message
+                alert('There was an error submitting the form. Please try again.');
+                console.error('Form submission error:', error);
+            })
+            .finally(() => {
+                // Reset button state
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
