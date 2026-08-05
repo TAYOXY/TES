@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Treasureland Elementary School - Nurturing the leaders of tomorrow through excellence in education. Montessori-based education in Ijebu Ode, Ogun State, Nigeria.">
+    <meta name="keywords" content="Treasureland Elementary School, Montessori education, Ijebu Ode, Ogun State, Nigeria, primary education, child-centered learning">
+    <meta name="author" content="Treasureland Elementary School">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="TES-Logo-nobg.png">
     <title>Treasureland Elementary School – Creativity, Innovation, Diversity</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -54,9 +59,41 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
+        /* Loading styles */
+        body:not(.loaded) {
+            opacity: 0;
+        }
+
+        body.loaded {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Keyboard navigation focus styles */
+        body.keyboard-navigation *:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        @keyframes loading {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
     </style>
 </head>
 <body class="bg-gray-50">
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-white z-[100] flex items-center justify-center">
+        <div class="text-center">
+            <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-20 w-auto mb-4 animate-pulse">
+            <div class="w-48 h-1 bg-gray-200 rounded-full overflow-hidden">
+                <div class="h-full bg-purple-600 animate-[loading_1.5s_ease-in-out_infinite]"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav id="navbar" class="fixed w-full bg-white shadow-md navbar-scroll z-50">
         <div class="container mx-auto px-6 py-4">
@@ -106,7 +143,7 @@
                             <a href="tes-portal.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">TES Portal</a>
                         </div>
                     </div>
-                    <a href="#news-events" class="text-gray-700 hover:text-purple-600 transition">News &amp; Events</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-purple-600 transition">News &amp; Events</a>
                     <a href="#gallery" class="text-gray-700 hover:text-purple-600 transition">Gallery</a>
                     <a href="#contact" class="text-gray-700 hover:text-purple-600 transition">Contact Us</a>
                     <div id="apply-now" class="relative group">
@@ -171,7 +208,7 @@
                     <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
                     TES Portal
                 </a>
-                <a href="#news-events" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                <a href="#gallery" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
                     <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
                     News &amp; Events
                 </a>
@@ -219,12 +256,12 @@
                         Where we nurture the leaders of tomorrow through a blend of tradition, innovation, and a commitment to excellence.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button type="button" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105">
+                        <a href="#gallery" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105 text-center">
                             <i class="fas fa-play-circle mr-2"></i> Take a Tour
-                        </button>
-                        <button type="button" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition transform hover:scale-105">
+                        </a>
+                        <a href="#our-history" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition transform hover:scale-105 text-center">
                             <i class="fas fa-book mr-2"></i> Learn More
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="relative">
@@ -448,15 +485,15 @@
 
                         <div class="space-y-4">
                             <div>
-                                <button type="button" class="w-full bg-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition">
+                                <a href="TES-Registration-Form.html" target="_blank" class="block w-full bg-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition text-center">
                                     <i class="fas fa-file-download mr-2"></i> Download Registration Form
-                                </button>
+                                </a>
                             </div>
 
                             <div>
-                                <button type="button" class="w-full border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-purple-50 transition">
+                                <a href="registration-form.html" class="block w-full border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-purple-50 transition text-center">
                                     <i class="fas fa-edit mr-2"></i> Fill Online Form
-                                </button>
+                                </a>
                             </div>
                         </div>
 
@@ -486,9 +523,10 @@
                 <div>
                     <h4 class="font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#our-school" class="hover:text-white transition">Our School</a></li>
+                        <li><a href="our-programs.html" class="hover:text-white transition">Our School</a></li>
                         <li><a href="#academics" class="hover:text-white transition">Academics</a></li>
                         <li><a href="#gallery" class="hover:text-white transition">Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact Us</a></li>
                     </ul>
                 </div>
 

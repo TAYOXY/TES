@@ -8,8 +8,9 @@ mobileMenuButton.addEventListener('click', () => {
 
 // Mobile Apply Now dropdown toggle
 document.addEventListener('click', (e) => {
-    if (e.target.matches('.bg-purple-600 button') && e.target.closest('.w-full')) {
-        const dropdown = e.target.nextElementSibling;
+    const button = e.target.closest('button');
+    if (button && button.closest('.bg-purple-600') && button.closest('.w-full')) {
+        const dropdown = button.nextElementSibling;
         if (dropdown && dropdown.classList.contains('space-y-2')) {
             dropdown.classList.toggle('hidden');
         }
@@ -151,26 +152,7 @@ function navigateGallery(direction) {
     }
 }
 
-// Form submission handling
-const downloadBtn = document.querySelector('button:has(.fa-file-download)');
-const fillOnlineBtn = document.querySelector('button:has(.fa-edit)');
-
-if (downloadBtn) {
-    downloadBtn.addEventListener('click', () => {
-        // Simulate download
-        showNotification('Download started! The registration form will download shortly.', 'success');
-    });
-}
-
-if (fillOnlineBtn) {
-    fillOnlineBtn.addEventListener('click', () => {
-        showNotification('Redirecting to online registration form...', 'info');
-        setTimeout(() => {
-            // In a real implementation, this would redirect to the actual form
-            console.log('Redirect to online form');
-        }, 1500);
-    });
-}
+// Form submission handling - removed as buttons are now links
 
 // Notification system
 function showNotification(message, type = 'info') {
@@ -217,17 +199,32 @@ function animateCounter(element, target, duration = 2000) {
     }, 16);
 }
 
-// Parallax effect for hero section
+// Parallax effect for hero section - optimized with requestAnimationFrame
+let ticking = false;
 window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroSection = document.querySelector('.hero-gradient');
-    if (heroSection) {
-        heroSection.style.transform = `translateY(${scrolled * 0.5}px)`;
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const scrolled = window.pageYOffset;
+            const heroSection = document.querySelector('.hero-gradient');
+            if (heroSection && scrolled < window.innerHeight) {
+                heroSection.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+            ticking = false;
+        });
+        ticking = true;
     }
 });
 
-// Loading animation
+// Loading animation and preloader
 window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.style.opacity = '0';
+        preloader.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => {
+            preloader.remove();
+        }, 500);
+    }
     document.body.classList.add('loaded');
 });
 
