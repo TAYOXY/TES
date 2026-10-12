@@ -1,10 +1,19 @@
 // Mobile menu toggle
 const mobileMenuButton = document.getElementById('mobile-menu-button');
+const logoButton = document.getElementById('logo-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
-mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-});
+if (mobileMenuButton) {
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+}
+
+if (logoButton) {
+    logoButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+}
 
 // Mobile Apply Now dropdown toggle
 document.addEventListener('click', (e) => {

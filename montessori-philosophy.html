@@ -72,55 +72,172 @@
     <nav id="navbar" class="fixed w-full bg-white shadow-md navbar-scroll z-50">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <div class="flex items-center">
+                <button type="button" id="logo-button" class="flex items-center md:hidden" aria-label="Toggle mobile menu">
                     <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-10 w-auto mr-3">
-                    <div class="flex flex-col">
+                    <span class="flex flex-col">
                         <span class="text-xl font-bold text-gray-800">TES</span>
                         <span class="text-xs text-gray-600">Treasureland Elementary School</span>
-                    </div>
-                </div>
+                    </span>
+                </button>
+                <a href="index.html" class="hidden md:flex items-center">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-10 w-auto mr-3">
+                    <span class="flex flex-col">
+                        <span class="text-xl font-bold text-gray-800">TES</span>
+                        <span class="text-xs text-gray-600">Treasureland Elementary School</span>
+                    </span>
+                </a>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-purple-600 transition">Home</a>
                     <div class="relative group">
-                        <button class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                        <button type="button" class="text-gray-700 hover:text-purple-600 transition flex items-center">
                             About TES <i class="fas fa-chevron-down ml-1 text-xs"></i>
                         </button>
                         <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                            <a href="founders-message.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">Founder's Message</a>
-                            <a href="our-history.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">Our History</a>
-                            <a href="montessori-philosophy.html" class="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">Montessori Philosophy</a>
+                            <a href="founders-message.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Founder's Message
+                            </a>
+                            <a href="our-history.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Our History
+                            </a>
+                            <a href="montessori-philosophy.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Montessori Philosophy
+                            </a>
                         </div>
                     </div>
-                    <a href="index.html#academics" class="text-gray-700 hover:text-purple-600 transition">Academics</a>
-                    <a href="index.html#news-events" class="text-gray-700 hover:text-purple-600 transition">News & Events</a>
-                    <a href="index.html#gallery" class="text-gray-700 hover:text-purple-600 transition">Gallery</a>
-                    <a href="index.html#contact" class="text-gray-700 hover:text-purple-600 transition">Contact Us</a>
-                    <button class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition">
-                        Apply Now
-                    </button>
+                    <div class="relative group">
+                        <button type="button" class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            Our School <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="our-programs.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Our Programs
+                            </a>
+                            <a href="our-staff.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Our Staff
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button type="button" class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            Academics <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="admissions.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Admissions
+                            </a>
+                            <a href="classes-and-teachers.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Classes and Teachers
+                            </a>
+                            <a href="tes-portal.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                TES Portal
+                            </a>
+                        </div>
+                    </div>
+                    <a href="#gallery" class="text-gray-700 hover:text-purple-600 transition">News &amp; Events</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-purple-600 transition">Gallery</a>
+                    <a href="#contact" class="text-gray-700 hover:text-purple-600 transition">Contact Us</a>
+                    <div id="apply-now" class="relative group">
+                        <button type="button" class="bg-purple-600 text-white px-4 md:px-6 py-2 rounded-full hover:bg-purple-700 transition flex items-center text-sm md:text-base">
+                            Apply Now <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full right-0 mt-2 w-64 md:w-72 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="py-2">
+                                <div class="px-4 pb-2 border-b border-gray-100">
+                                    <div class="font-semibold text-gray-800 mb-2">Registration Forms</div>
+                                    <a href="registration-form.html" class="block px-3 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition">
+                                        <i class="fas fa-laptop-code mr-2"></i> Online Registration Form
+                                    </a>
+                                </div>
+                                <div class="px-4 pb-2">
+                                    <a href="TES-Registration-Form.html" target="_blank" class="block px-3 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition">
+                                        <i class="fas fa-file-download mr-2"></i> Printable Registration Form
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <button type="button" id="mobile-menu-button" class="md:hidden text-gray-700" aria-label="Toggle mobile menu">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
             
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="index.html" class="block py-2 text-gray-700 hover:text-purple-600">Home</a>
-                <a href="founders-message.html" class="block py-2 text-gray-700 hover:text-purple-600">Founder's Message</a>
-                <a href="our-history.html" class="block py-2 text-gray-700 hover:text-purple-600">Our History</a>
-                <a href="montessori-philosophy.html" class="block py-2 text-gray-700 hover:text-purple-600">Montessori Philosophy</a>
-                <a href="index.html#academics" class="block py-2 text-gray-700 hover:text-purple-600">Academics</a>
-                <a href="index.html#news-events" class="block py-2 text-gray-700 hover:text-purple-600">News & Events</a>
-                <a href="index.html#gallery" class="block py-2 text-gray-700 hover:text-purple-600">Gallery</a>
-                <a href="index.html#contact" class="block py-2 text-gray-700 hover:text-purple-600">Contact Us</a>
-                <button class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition w-full mt-4">
-                    Apply Now
-                </button>
+                <a href="founders-message.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Founder's Message
+                </a>
+                <a href="our-history.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Our History
+                </a>
+                <a href="montessori-philosophy.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Montessori Philosophy
+                </a>
+                <a href="our-programs.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Our Programs
+                </a>
+                <a href="our-staff.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Our Staff
+                </a>
+                <a href="admissions.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Admissions
+                </a>
+                <a href="classes-and-teachers.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Classes and Teachers
+                </a>
+                <a href="tes-portal.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    TES Portal
+                </a>
+                <a href="#gallery" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    News &amp; Events
+                </a>
+                <a href="#gallery" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Gallery
+                </a>
+                <a href="#contact" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Contact Us
+                </a>
+                <div class="bg-purple-600 text-white px-4 md:px-6 py-2 rounded-full hover:bg-purple-700 transition w-full mt-4">
+                    <button type="button" class="w-full text-left flex items-center justify-between text-sm md:text-base" onclick="this.parentElement.classList.toggle('expanded')">
+                        <span>Apply Now</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="mt-2 space-y-2 hidden">
+                        <div class="px-4 pb-2 border-b border-gray-200">
+                            <div class="font-semibold text-gray-800 mb-2">Registration Forms</div>
+                            <a href="registration-form.html" class="block bg-white text-purple-600 px-4 py-2 rounded-full text-center hover:bg-gray-100 transition">
+                                <i class="fas fa-laptop-code mr-2"></i> Online Registration Form
+                            </a>
+                        </div>
+                        <div class="px-4 pb-2">
+                            <a href="TES-Registration-Form.html" target="_blank" class="block bg-white text-purple-600 px-4 py-2 rounded-full text-center hover:bg-gray-100 transition">
+                                <i class="fas fa-file-download mr-2"></i> Printable Registration Form
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -349,7 +466,7 @@
                         <a href="registration-form.html" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105 inline-block">
                             <i class="fas fa-edit mr-2"></i> Fill Online Form
                         </a>
-                        <a href="mailto:admission@treasurelandschools.com?subject=School%20Visit%20Request%20-%20Treasureland%20Elementary%20School&body=I%20would%20like%20to%20schedule%20a%20visit%20to%20learn%20more%20about%20the%20Montessori%20program." class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition transform hover:scale-105 inline-block">
+                        <a href="mailto:info@treasurelandschools.com?subject=School%20Visit%20Request%20-%20Treasureland%20Elementary%20School&body=I%20would%20like%20to%20schedule%20a%20visit%20to%20learn%20more%20about%20the%20Montessori%20program." class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition transform hover:scale-105 inline-block">
                             <i class="fas fa-calendar mr-2"></i> Schedule a Visit
                         </a>
                     </div>
@@ -367,7 +484,7 @@
                     <p class="text-gray-600">Have questions about our teaching philosophy? We'd love to discuss them with you!</p>
                 </div>
                 
-                <form id="contactForm" action="https://formspree.io/f/mvgkqdjd" method="POST" class="bg-white rounded-2xl shadow-xl p-8">
+                <form id="contactForm" action="https://formspree.io/f/mljeqrpq" method="POST" class="bg-white rounded-2xl shadow-xl p-8">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-gray-700 font-medium mb-2">Full Name *</label>
@@ -423,17 +540,17 @@
                         Nurturing the leaders of tomorrow through excellence in education.
                     </p>
                 </div>
-                
+
                 <div>
                     <h4 class="font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
-                        <li><a href="founders-message.html" class="hover:text-white transition">Founder's Message</a></li>
-                        <li><a href="our-history.html" class="hover:text-white transition">Our History</a></li>
-                        <li><a href="index.html#gallery" class="hover:text-white transition">Gallery</a></li>
+                        <li><a href="our-programs.html" class="hover:text-white transition">Our School</a></li>
+                        <li><a href="#academics" class="hover:text-white transition">Academics</a></li>
+                        <li><a href="#gallery" class="hover:text-white transition">Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact Us</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h4 class="font-semibold mb-4">Programs</h4>
                     <ul class="space-y-2 text-gray-400">
@@ -443,17 +560,17 @@
                         <li><a href="#" class="hover:text-white transition">Summer Camp</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h4 class="font-semibold mb-4">Contact Info</h4>
                     <ul class="space-y-2 text-gray-400">
                         <li><i class="fas fa-phone mr-2"></i> +234 807 455 2156</li>
-                        <li><i class="fas fa-envelope mr-2"></i> admission@treasurelandschools.com</li>
+                        <li><i class="fas fa-envelope mr-2"></i> info@treasurelandschools.com</li>
                         <li><i class="fas fa-map-marker-alt mr-2"></i> Ijebu Ode, Ogun State</li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
                 <p>&copy; 2026 Treasureland Elementary School. All rights reserved.</p>
             </div>
