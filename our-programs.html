@@ -7,16 +7,29 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        :root {
+            --brand-green: #0e5d46;
+            --brand-green-deep: #0a473a;
+            --brand-gold: #d7b15d;
+            --brand-soft: #f5f7f3;
+            --brand-slate: #1f2a37;
+        }
+
         * {
             font-family: 'Inter', sans-serif;
         }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        body {
+            background: #f6f7f4;
+            color: var(--brand-slate);
         }
-        
+
+        .hero-gradient {
+            background: linear-gradient(120deg, rgba(7, 35, 29, 0.92), rgba(16, 93, 70, 0.8));
+        }
+
         .card-hover {
             transition: all 0.3s ease;
         }
@@ -40,12 +53,57 @@
         }
         
         .text-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-gold) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
+        .bg-purple-600,
+        .bg-purple-500,
+        .bg-purple-50,
+        .bg-purple-100,
+        .bg-purple-600:hover,
+        .text-purple-600,
+        .text-purple-500,
+        .text-purple-400,
+        .border-purple-500,
+        .hover\:bg-purple-700:hover,
+        .hover\:text-purple-600:hover {
+            transition: all 0.2s ease;
+        }
+
+        .bg-purple-600,
+        .bg-purple-500 {
+            background-color: var(--brand-green) !important;
+        }
+
+        .hover\:bg-purple-700:hover {
+            background-color: var(--brand-green-deep) !important;
+        }
+
+        .text-purple-600,
+        .text-purple-500 {
+            color: var(--brand-green) !important;
+        }
+
+        .text-purple-400 {
+            color: var(--brand-gold) !important;
+        }
+
+        .bg-purple-50,
+        .bg-purple-100 {
+            background-color: rgba(14, 93, 70, 0.06) !important;
+        }
+
+        .border-purple-500 {
+            border-color: rgba(14, 93, 70, 0.7) !important;
+        }
+
+        .hover\:text-purple-600:hover {
+            color: var(--brand-green) !important;
+        }
+
         .program-card {
             position: relative;
             overflow: hidden;
@@ -271,42 +329,42 @@
                 <!-- Programs Grid -->
                 <div class="space-y-12">
                     
-                    <!-- Crèche/Toddler Group -->
-                    <div class="program-card bg-gradient-to-r from-pink-50 to-purple-50 p-8 rounded-xl card-hover">
+                    <!-- Montessori Academic -->
+                    <div class="program-card bg-gradient-to-r from-emerald-50 to-green-50 p-8 rounded-xl card-hover">
                         <div class="grid md:grid-cols-2 gap-8 items-center">
                             <div>
                                 <div class="flex items-center mb-4">
-                                    <div class="bg-pink-500 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-baby"></i>
+                                    <div class="bg-[#0e5d46] text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-seedling"></i>
                                     </div>
-                                    <h3 class="text-2xl font-bold text-gray-800">Crèche/Toddler Group</h3>
+                                    <h3 class="text-2xl font-bold text-gray-800">Montessori Academic</h3>
                                 </div>
                                 <p class="text-gray-700 mb-6">
-                                    Our Crèche and Toddler program provides a nurturing and stimulating environment for our youngest learners. Through play-based activities and gentle guidance, we help toddlers develop essential motor skills, social awareness, and early language abilities in a safe, caring setting.
+                                    Our Montessori Academic program creates a calm, structured, and engaging learning environment where children build independence, confidence, and a strong foundation in literacy, numeracy, and practical life skills.
                                 </p>
                                 <div class="space-y-3">
                                     <div class="flex items-center text-gray-600">
-                                        <i class="fas fa-check-circle text-pink-500 mr-2"></i>
-                                        <span>Sensory development activities</span>
+                                        <i class="fas fa-check-circle text-[#0e5d46] mr-2"></i>
+                                        <span>Independent learning and self-discipline</span>
                                     </div>
                                     <div class="flex items-center text-gray-600">
-                                        <i class="fas fa-check-circle text-pink-500 mr-2"></i>
-                                        <span>Social and emotional growth</span>
+                                        <i class="fas fa-check-circle text-[#0e5d46] mr-2"></i>
+                                        <span>Hands-on learning with Montessori materials</span>
                                     </div>
                                     <div class="flex items-center text-gray-600">
-                                        <i class="fas fa-check-circle text-pink-500 mr-2"></i>
-                                        <span>Language and communication skills</span>
+                                        <i class="fas fa-check-circle text-[#0e5d46] mr-2"></i>
+                                        <span>Early academic confidence and curiosity</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="text-center">
                                 <div class="bg-white p-6 rounded-xl shadow-lg">
-                                    <div class="w-24 h-24 bg-pink-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                        <i class="fas fa-child text-3xl text-pink-500"></i>
+                                    <div class="w-24 h-24 bg-[#edf9f5] rounded-full mx-auto mb-4 flex items-center justify-center">
+                                        <i class="fas fa-book-open text-3xl text-[#0e5d46]"></i>
                                     </div>
-                                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Helen Taiwo</h4>
-                                    <p class="text-purple-600 font-medium mb-4">Head of Department</p>
-                                    <button class="bg-pink-500 text-white px-6 py-2 rounded-full hover:bg-pink-600 transition">
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Montessori Foundation</h4>
+                                    <p class="text-[#0e5d46] font-medium mb-4">Learning through exploration</p>
+                                    <button class="bg-[#0e5d46] text-white px-6 py-2 rounded-full hover:bg-[#0a473a] transition">
                                         <i class="fas fa-user-plus mr-2"></i> Enroll Now
                                     </button>
                                 </div>
@@ -314,85 +372,128 @@
                         </div>
                     </div>
 
-                    <!-- Pre-School -->
-                    <div class="program-card bg-gradient-to-r from-blue-50 to-cyan-50 p-8 rounded-xl card-hover">
+                    <!-- Creche -->
+                    <div class="program-card bg-gradient-to-r from-amber-50 to-yellow-50 p-8 rounded-xl card-hover">
                         <div class="grid md:grid-cols-2 gap-8 items-center">
                             <div class="order-2 md:order-1">
                                 <div class="bg-white p-6 rounded-xl shadow-lg">
-                                    <div class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                        <i class="fas fa-graduation-cap text-3xl text-blue-500"></i>
+                                    <div class="w-24 h-24 bg-[#f7f0db] rounded-full mx-auto mb-4 flex items-center justify-center">
+                                        <i class="fas fa-baby text-3xl text-[#d7b15d]"></i>
                                     </div>
-                                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Mercy Tobi - Otubela</h4>
-                                    <p class="text-blue-600 font-medium mb-4">Head of Department</p>
-                                    <button class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition">
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Safe beginnings</h4>
+                                    <p class="text-[#0e5d46] font-medium mb-4">Nurturing with care and consistency</p>
+                                    <button class="bg-[#d7b15d] text-[#10241d] px-6 py-2 rounded-full hover:bg-[#cfa958] transition">
                                         <i class="fas fa-user-plus mr-2"></i> Enroll Now
                                     </button>
                                 </div>
                             </div>
                             <div class="order-1 md:order-2">
                                 <div class="flex items-center mb-4">
-                                    <div class="bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-book-open"></i>
+                                    <div class="bg-[#d7b15d] text-[#10241d] w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-baby"></i>
                                     </div>
-                                    <h3 class="text-2xl font-bold text-gray-800">Pre-School (18 months to 5 years)</h3>
+                                    <h3 class="text-2xl font-bold text-gray-800">Creche</h3>
                                 </div>
                                 <p class="text-gray-700 mb-6">
-                                    Our Pre-School program follows the Montessori approach, fostering independence, curiosity, and a love for learning. Children engage with specially designed materials that develop cognitive skills, creativity, and social competence through hands-on exploration and guided discovery.
+                                    Our Creche offers a secure, warm, and affectionate setting for babies and toddlers, helping them feel safe while supporting early sensory, emotional, and motor development in a nurturing environment.
                                 </p>
                                 <div class="space-y-3">
                                     <div class="flex items-center text-gray-600">
-                                        <i class="fas fa-check-circle text-blue-500 mr-2"></i>
-                                        <span>Montessori-based curriculum</span>
+                                        <i class="fas fa-check-circle text-[#d7b15d] mr-2"></i>
+                                        <span>Warm, caring daily routines</span>
                                     </div>
                                     <div class="flex items-center text-gray-600">
-                                        <i class="fas fa-check-circle text-blue-500 mr-2"></i>
-                                        <span>Practical life skills development</span>
+                                        <i class="fas fa-check-circle text-[#d7b15d] mr-2"></i>
+                                        <span>Early social and sensory stimulation</span>
                                     </div>
                                     <div class="flex items-center text-gray-600">
-                                        <i class="fas fa-check-circle text-blue-500 mr-2"></i>
-                                        <span>Sensorial and language activities</span>
+                                        <i class="fas fa-check-circle text-[#d7b15d] mr-2"></i>
+                                        <span>Safe, child-centred care</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Elementary School -->
-                    <div class="program-card bg-gradient-to-r from-green-50 to-emerald-50 p-8 rounded-xl card-hover">
+                    <!-- Preschool -->
+                    <div class="program-card bg-gradient-to-r from-sky-50 to-cyan-50 p-8 rounded-xl card-hover">
                         <div class="grid md:grid-cols-2 gap-8 items-center">
                             <div>
                                 <div class="flex items-center mb-4">
-                                    <div class="bg-green-500 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-school"></i>
+                                    <div class="bg-[#0e5d46] text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-book-open"></i>
                                     </div>
-                                    <h3 class="text-2xl font-bold text-gray-800">Elementary School (5 to 11 years)</h3>
+                                    <h3 class="text-2xl font-bold text-gray-800">Preschool (Preparatory &amp; Playgroup)</h3>
                                 </div>
                                 <p class="text-gray-700 mb-6">
-                                    Our Elementary School program builds strong academic foundations while nurturing critical thinking, creativity, and character development. We offer a comprehensive curriculum that prepares students for future academic success and lifelong learning through engaging, challenging, and relevant educational experiences.
+                                    Our Preschool programme blends play, discovery, and guided learning to help children develop early literacy, numeracy, communication, independence, and confidence in preparation for primary school.
                                 </p>
                                 <div class="space-y-3">
                                     <div class="flex items-center text-gray-600">
-                                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                        <span>Core subjects and enrichment programs</span>
+                                        <i class="fas fa-check-circle text-[#0e5d46] mr-2"></i>
+                                        <span>Play-based and discovery learning</span>
                                     </div>
                                     <div class="flex items-center text-gray-600">
-                                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                        <span>STEM and arts integration</span>
+                                        <i class="fas fa-check-circle text-[#0e5d46] mr-2"></i>
+                                        <span>Language, numeracy and social readiness</span>
                                     </div>
                                     <div class="flex items-center text-gray-600">
-                                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                        <span>Leadership and character development</span>
+                                        <i class="fas fa-check-circle text-[#0e5d46] mr-2"></i>
+                                        <span>Confidence-building routines and activities</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="text-center">
                                 <div class="bg-white p-6 rounded-xl shadow-lg">
-                                    <div class="w-24 h-24 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                        <i class="fas fa-chalkboard-teacher text-3xl text-green-500"></i>
+                                    <div class="w-24 h-24 bg-[#eaf3ff] rounded-full mx-auto mb-4 flex items-center justify-center">
+                                        <i class="fas fa-graduation-cap text-3xl text-[#0e5d46]"></i>
                                     </div>
-                                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Olaosebikan-Olatubosun</h4>
-                                    <p class="text-green-600 font-medium mb-4">Director of Studies</p>
-                                    <button class="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition">
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Preparatory &amp; Playgroup</h4>
+                                    <p class="text-[#0e5d46] font-medium mb-4">Strong early learning foundation</p>
+                                    <button class="bg-[#0e5d46] text-white px-6 py-2 rounded-full hover:bg-[#0a473a] transition">
+                                        <i class="fas fa-user-plus mr-2"></i> Enroll Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Primary School -->
+                    <div class="program-card bg-gradient-to-r from-emerald-50 to-lime-50 p-8 rounded-xl card-hover">
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <div class="flex items-center mb-4">
+                                    <div class="bg-[#0e5d46] text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-school"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-gray-800">Primary School</h3>
+                                </div>
+                                <p class="text-gray-700 mb-6">
+                                    Our Primary School programme develops strong foundations in literacy, numeracy, science, creativity, and character, helping pupils become confident thinkers, communicators, and responsible young leaders.
+                                </p>
+                                <div class="space-y-3">
+                                    <div class="flex items-center text-gray-600">
+                                        <i class="fas fa-check-circle text-[#0e5d46] mr-2"></i>
+                                        <span>Core subject mastery and enrichment</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <i class="fas fa-check-circle text-[#0e5d46] mr-2"></i>
+                                        <span>Critical thinking and creativity</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <i class="fas fa-check-circle text-[#0e5d46] mr-2"></i>
+                                        <span>Leadership skills and values</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <div class="bg-white p-6 rounded-xl shadow-lg">
+                                    <div class="w-24 h-24 bg-[#edf9f5] rounded-full mx-auto mb-4 flex items-center justify-center">
+                                        <i class="fas fa-chalkboard-teacher text-3xl text-[#0e5d46]"></i>
+                                    </div>
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Primary Learning</h4>
+                                    <p class="text-[#0e5d46] font-medium mb-4">Building confident future-ready learners</p>
+                                    <button class="bg-[#0e5d46] text-white px-6 py-2 rounded-full hover:bg-[#0a473a] transition">
                                         <i class="fas fa-user-plus mr-2"></i> Enroll Now
                                     </button>
                                 </div>
