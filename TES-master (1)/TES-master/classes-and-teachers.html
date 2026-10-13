@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes and Teachers – Treasureland Elementary School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        :root {
+            --brand-green: #0e5d46;
+            --brand-green-deep: #0a473a;
+            --brand-gold: #d7b15d;
+            --brand-soft: #f5f7f3;
+            --brand-slate: #1f2a37;
+        }
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #f6f7f4;
+            color: var(--brand-slate);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(120deg, rgba(7, 35, 29, 0.92), rgba(16, 93, 70, 0.8));
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .navbar-scroll {
+            transition: all 0.3s ease;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bg-purple-600,
+        .bg-purple-500,
+        .bg-purple-50,
+        .bg-purple-100,
+        .text-purple-600,
+        .text-purple-500,
+        .text-purple-400,
+        .hover\:bg-purple-700:hover,
+        .hover\:text-purple-600:hover {
+            transition: all 0.2s ease;
+        }
+
+        .bg-purple-600,
+        .bg-purple-500 {
+            background-color: var(--brand-green) !important;
+        }
+
+        .hover\:bg-purple-700:hover {
+            background-color: var(--brand-green-deep) !important;
+        }
+
+        .text-purple-600,
+        .text-purple-500 {
+            color: var(--brand-green) !important;
+        }
+
+        .text-purple-400 {
+            color: var(--brand-gold) !important;
+        }
+
+        .bg-purple-50,
+        .bg-purple-100 {
+            background-color: rgba(14, 93, 70, 0.06) !important;
+        }
+
+        .hover\:text-purple-600:hover {
+            color: var(--brand-green) !important;
+        }
+        
+        .teacher-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .teacher-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .teacher-card:hover::before {
+            left: 100%;
+        }
+        
+        .teacher-image-placeholder {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #0e5d46 0%, #d7b15d 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full bg-white shadow-md navbar-scroll z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <button type="button" id="logo-button" class="flex items-center md:hidden" aria-label="Toggle mobile menu">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-10 w-auto mr-3">
+                    <span class="flex flex-col">
+                        <span class="text-xl font-bold text-gray-800">TES</span>
+                        <span class="text-xs text-gray-600">Treasureland Elementary School</span>
+                    </span>
+                </button>
+                <a href="index.html" class="hidden md:flex items-center">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-10 w-auto mr-3">
+                    <span class="flex flex-col">
+                        <span class="text-xl font-bold text-gray-800">TES</span>
+                        <span class="text-xs text-gray-600">Treasureland Elementary School</span>
+                    </span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <div class="relative group">
+                        <button type="button" class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            About TES <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="founders-message.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Founder's Message
+                            </a>
+                            <a href="our-history.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Our History
+                            </a>
+                            <a href="montessori-philosophy.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Montessori Philosophy
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button type="button" class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            Our School <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="our-programs.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Our Programs
+                            </a>
+                            <a href="our-staff.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Our Staff
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button type="button" class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            Academics <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="admissions.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Admissions
+                            </a>
+                            <a href="classes-and-teachers.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Classes and Teachers
+                            </a>
+                            <a href="tes-portal.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                TES Portal
+                            </a>
+                        </div>
+                    </div>
+                    <a href="#gallery" class="text-gray-700 hover:text-purple-600 transition">News &amp; Events</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-purple-600 transition">Gallery</a>
+                    <a href="#contact" class="text-gray-700 hover:text-purple-600 transition">Contact Us</a>
+                    <div id="apply-now" class="relative group">
+                        <button type="button" class="bg-purple-600 text-white px-4 md:px-6 py-2 rounded-full hover:bg-purple-700 transition flex items-center text-sm md:text-base">
+                            Apply Now <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full right-0 mt-2 w-64 md:w-72 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="py-2">
+                                <div class="px-4 pb-2 border-b border-gray-100">
+                                    <div class="font-semibold text-gray-800 mb-2">Registration Forms</div>
+                                    <a href="registration-form.html" class="block px-3 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition">
+                                        <i class="fas fa-laptop-code mr-2"></i> Online Registration Form
+                                    </a>
+                                </div>
+                                <div class="px-4 pb-2">
+                                    <a href="TES-Registration-Form.html" target="_blank" class="block px-3 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition">
+                                        <i class="fas fa-file-download mr-2"></i> Printable Registration Form
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button type="button" id="mobile-menu-button" class="md:hidden text-gray-700" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="founders-message.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Founder's Message
+                </a>
+                <a href="our-history.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Our History
+                </a>
+                <a href="montessori-philosophy.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Montessori Philosophy
+                </a>
+                <a href="our-programs.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Our Programs
+                </a>
+                <a href="our-staff.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Our Staff
+                </a>
+                <a href="admissions.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Admissions
+                </a>
+                <a href="classes-and-teachers.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Classes and Teachers
+                </a>
+                <a href="tes-portal.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    TES Portal
+                </a>
+                <a href="#gallery" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    News &amp; Events
+                </a>
+                <a href="#gallery" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Gallery
+                </a>
+                <a href="#contact" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Contact Us
+                </a>
+                <div class="bg-purple-600 text-white px-4 md:px-6 py-2 rounded-full hover:bg-purple-700 transition w-full mt-4">
+                    <button type="button" class="w-full text-left flex items-center justify-between text-sm md:text-base" onclick="this.parentElement.classList.toggle('expanded')">
+                        <span>Apply Now</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="mt-2 space-y-2 hidden">
+                        <div class="px-4 pb-2 border-b border-gray-200">
+                            <div class="font-semibold text-gray-800 mb-2">Registration Forms</div>
+                            <a href="registration-form.html" class="block bg-white text-purple-600 px-4 py-2 rounded-full text-center hover:bg-gray-100 transition">
+                                <i class="fas fa-laptop-code mr-2"></i> Online Registration Form
+                            </a>
+                        </div>
+                        <div class="px-4 pb-2">
+                            <a href="TES-Registration-Form.html" target="_blank" class="block bg-white text-purple-600 px-4 py-2 rounded-full text-center hover:bg-gray-100 transition">
+                                <i class="fas fa-file-download mr-2"></i> Printable Registration Form
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero-gradient py-20 pt-32">
+        <div class="container mx-auto px-6">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Classes and Teachers</h1>
+                <div class="w-24 h-1 bg-white mx-auto mb-6"></div>
+                <p class="text-xl text-gray-100 max-w-3xl mx-auto">
+                    Meet our dedicated teaching staff and explore our class structure
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                
+                <!-- Introduction -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Teaching Team</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Our dedicated team of experienced educators is committed to providing quality education and nurturing the potential of every student at Treasureland Elementary School.
+                    </p>
+                </div>
+
+                <!-- Teachers Grid -->
+                <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+                    
+                    <!-- Mercy Tobi – Otubela -->
+                    <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                        <div class="text-center">
+                            <div class="teacher-image-placeholder">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Mercy Tobi – Otubela</h3>
+                            <p class="text-purple-600 font-medium mb-3">Head of Department</p>
+                            <p class="text-gray-600 text-sm mb-4">Experienced educator dedicated to nurturing young minds</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-envelope text-xs"></i>
+                                </a>
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-phone text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Busayo Adesanya -->
+                    <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                        <div class="text-center">
+                            <div class="teacher-image-placeholder">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Busayo Adesanya</h3>
+                            <p class="text-purple-600 font-medium mb-3">Class Teacher</p>
+                            <p class="text-gray-600 text-sm mb-4">Passionate about creating engaging learning experiences</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-envelope text-xs"></i>
+                                </a>
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-phone text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- John-Hope Oluwaseun -->
+                    <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                        <div class="text-center">
+                            <div class="teacher-image-placeholder">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">John-Hope Oluwaseun</h3>
+                            <p class="text-purple-600 font-medium mb-3">Subject Teacher</p>
+                            <p class="text-gray-600 text-sm mb-4">Specialized in mathematics and science education</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-envelope text-xs"></i>
+                                </a>
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-phone text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Abolaji Adeola -->
+                    <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                        <div class="text-center">
+                            <div class="teacher-image-placeholder">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Abolaji Adeola</h3>
+                            <p class="text-purple-600 font-medium mb-3">Class Teacher</p>
+                            <p class="text-gray-600 text-sm mb-4">Committed to fostering creativity and critical thinking</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-envelope text-xs"></i>
+                                </a>
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-phone text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Titilope Akindele -->
+                    <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                        <div class="text-center">
+                            <div class="teacher-image-placeholder">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Titilope Akindele</h3>
+                            <p class="text-purple-600 font-medium mb-3">Subject Teacher</p>
+                            <p class="text-gray-600 text-sm mb-4">Expert in language arts and literacy development</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-envelope text-xs"></i>
+                                </a>
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-phone text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Busayo Akinloye -->
+                    <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                        <div class="text-center">
+                            <div class="teacher-image-placeholder">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Busayo Akinloye</h3>
+                            <p class="text-purple-600 font-medium mb-3">Class Teacher</p>
+                            <p class="text-gray-600 text-sm mb-4">Dedicated to creating inclusive learning environments</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-envelope text-xs"></i>
+                                </a>
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-phone text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Oluremi Lobele -->
+                    <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                        <div class="text-center">
+                            <div class="teacher-image-placeholder">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Oluremi Lobele</h3>
+                            <p class="text-purple-600 font-medium mb-3">Subject Teacher</p>
+                            <p class="text-gray-600 text-sm mb-4">Specializes in early childhood education</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-envelope text-xs"></i>
+                                </a>
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-phone text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Oluwole Esther -->
+                    <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                        <div class="text-center">
+                            <div class="teacher-image-placeholder">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Oluwole Esther</h3>
+                            <p class="text-purple-600 font-medium mb-3">Class Teacher</p>
+                            <p class="text-gray-600 text-sm mb-4">Focus on holistic child development</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-envelope text-xs"></i>
+                                </a>
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-phone text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Teachers (showing first 8, with load more functionality) -->
+                    <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                        <div class="text-center">
+                            <div class="teacher-image-placeholder">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Abimbola Abisagbo</h3>
+                            <p class="text-purple-600 font-medium mb-3">Subject Teacher</p>
+                            <p class="text-gray-600 text-sm mb-4">Expert in arts and creative education</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-envelope text-xs"></i>
+                                </a>
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-phone text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                        <div class="text-center">
+                            <div class="teacher-image-placeholder">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Mgbolu Mary</h3>
+                            <p class="text-purple-600 font-medium mb-3">Class Teacher</p>
+                            <p class="text-gray-600 text-sm mb-4">Committed to academic excellence</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-envelope text-xs"></i>
+                                </a>
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-phone text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                        <div class="text-center">
+                            <div class="teacher-image-placeholder">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Mebude Oluwatoyin</h3>
+                            <p class="text-purple-600 font-medium mb-3">Subject Teacher</p>
+                            <p class="text-gray-600 text-sm mb-4">Specializes in social sciences</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-envelope text-xs"></i>
+                                </a>
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-phone text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                        <div class="text-center">
+                            <div class="teacher-image-placeholder">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Damilola Jeje</h3>
+                            <p class="text-purple-600 font-medium mb-3">Class Teacher</p>
+                            <p class="text-gray-600 text-sm mb-4">Focus on technology integration</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-envelope text-xs"></i>
+                                </a>
+                                <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fas fa-phone text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mb-12">
+                    <button id="load-more-btn" class="bg-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-700 transition transform hover:scale-105">
+                        <i class="fas fa-plus mr-2"></i> Load More Teachers
+                    </button>
+                </div>
+
+                <!-- Additional Hidden Teachers -->
+                <div id="additional-teachers" class="hidden">
+                    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+                        
+                        <!-- Sherifat Agbetu -->
+                        <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-center">
+                                <div class="teacher-image-placeholder">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Sherifat Agbetu</h3>
+                                <p class="text-purple-600 font-medium mb-3">Subject Teacher</p>
+                                <p class="text-gray-600 text-sm mb-4">Expert in physical education</p>
+                                <div class="flex justify-center space-x-3">
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-envelope text-xs"></i>
+                                    </a>
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-phone text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Motunrayo Ogunleye -->
+                        <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-center">
+                                <div class="teacher-image-placeholder">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Motunrayo Ogunleye</h3>
+                                <p class="text-purple-600 font-medium mb-3">Class Teacher</p>
+                                <p class="text-gray-600 text-sm mb-4">Dedicated to student success</p>
+                                <div class="flex justify-center space-x-3">
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-envelope text-xs"></i>
+                                    </a>
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-phone text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Adekoja Taiwo -->
+                        <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-center">
+                                <div class="teacher-image-placeholder">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Adekoja Taiwo</h3>
+                                <p class="text-purple-600 font-medium mb-3">Subject Teacher</p>
+                                <p class="text-gray-600 text-sm mb-4">Specializes in music education</p>
+                                <div class="flex justify-center space-x-3">
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-envelope text-xs"></i>
+                                    </a>
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-phone text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Solomon Okunowo -->
+                        <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-center">
+                                <div class="teacher-image-placeholder">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Solomon Okunowo</h3>
+                                <p class="text-purple-600 font-medium mb-3">Class Teacher</p>
+                                <p class="text-gray-600 text-sm mb-4">Focus on STEM education</p>
+                                <div class="flex justify-center space-x-3">
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-envelope text-xs"></i>
+                                    </a>
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-phone text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Martina Mgbeoji -->
+                        <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-center">
+                                <div class="teacher-image-placeholder">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Martina Mgbeoji</h3>
+                                <p class="text-purple-600 font-medium mb-3">Subject Teacher</p>
+                                <p class="text-gray-600 text-sm mb-4">Expert in religious education</p>
+                                <div class="flex justify-center space-x-3">
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-envelope text-xs"></i>
+                                    </a>
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-phone text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Omowunmi Arigbabuwo -->
+                        <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-center">
+                                <div class="teacher-image-placeholder">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Omowunmi Arigbabuwo</h3>
+                                <p class="text-purple-600 font-medium mb-3">Class Teacher</p>
+                                <p class="text-gray-600 text-sm mb-4">Committed to inclusive education</p>
+                                <div class="flex justify-center space-x-3">
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-envelope text-xs"></i>
+                                    </a>
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-phone text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Oluremi Temitope -->
+                        <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-center">
+                                <div class="teacher-image-placeholder">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Oluremi Temitope</h3>
+                                <p class="text-purple-600 font-medium mb-3">Subject Teacher</p>
+                                <p class="text-gray-600 text-sm mb-4">Specializes in computer studies</p>
+                                <div class="flex justify-center space-x-3">
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-envelope text-xs"></i>
+                                    </a>
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-phone text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- John Talent Chinoyerem -->
+                        <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-center">
+                                <div class="teacher-image-placeholder">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">John Talent Chinoyerem</h3>
+                                <p class="text-purple-600 font-medium mb-3">Class Teacher</p>
+                                <p class="text-gray-600 text-sm mb-4">Focus on creative arts</p>
+                                <div class="flex justify-center space-x-3">
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-envelope text-xs"></i>
+                                    </a>
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-phone text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Victoria Eno -->
+                        <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-center">
+                                <div class="teacher-image-placeholder">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Victoria Eno</h3>
+                                <p class="text-purple-600 font-medium mb-3">Subject Teacher</p>
+                                <p class="text-gray-600 text-sm mb-4">Expert in home economics</p>
+                                <div class="flex justify-center space-x-3">
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-envelope text-xs"></i>
+                                    </a>
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-phone text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Adetutu Badmus -->
+                        <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-center">
+                                <div class="teacher-image-placeholder">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Adetutu Badmus</h3>
+                                <p class="text-purple-600 font-medium mb-3">Class Teacher</p>
+                                <p class="text-gray-600 text-sm mb-4">Dedicated to literacy development</p>
+                                <div class="flex justify-center space-x-3">
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-envelope text-xs"></i>
+                                    </a>
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-phone text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Olasubomi Balogun -->
+                        <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-center">
+                                <div class="teacher-image-placeholder">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Olasubomi Balogun</h3>
+                                <p class="text-purple-600 font-medium mb-3">Subject Teacher</p>
+                                <p class="text-gray-600 text-sm mb-4">Specializes in agricultural science</p>
+                                <div class="flex justify-center space-x-3">
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-envelope text-xs"></i>
+                                    </a>
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-phone text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Omolola Ademiju (Mrs) -->
+                        <div class="teacher-card bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-center">
+                                <div class="teacher-image-placeholder">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Omolola Ademiju (Mrs)</h3>
+                                <p class="text-purple-600 font-medium mb-3">Class Teacher</p>
+                                <p class="text-gray-600 text-sm mb-4">Focus on early childhood development</p>
+                                <div class="flex justify-center space-x-3">
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-envelope text-xs"></i>
+                                    </a>
+                                    <a href="#" class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                        <i class="fas fa-phone text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center bg-purple-600 p-8 rounded-xl text-white">
+                    <h3 class="text-2xl font-bold mb-4">Join Our Teaching Team</h3>
+                    <p class="mb-6">We are always looking for passionate educators to join our family</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://treasurelandschools.com/new-admission-registration/" target="_blank" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105">
+                            <i class="fas fa-edit mr-2"></i> Fill Online Form
+                        </a>
+                        <a href="mailto:info@treasurelandschools.com?subject=Teaching%20Application%20-%20Treasureland%20Elementary%20School" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition transform hover:scale-105 inline-block">
+                            <i class="fas fa-envelope mr-2"></i> Contact HR
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-graduation-cap text-2xl text-purple-400 mr-2"></i>
+                        <span class="text-lg font-semibold">Treasureland Elementary</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Nurturing the leaders of tomorrow through excellence in education.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="our-programs.html" class="hover:text-white transition">Our School</a></li>
+                        <li><a href="#academics" class="hover:text-white transition">Academics</a></li>
+                        <li><a href="#gallery" class="hover:text-white transition">Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Programs</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Early Years</a></li>
+                        <li><a href="#" class="hover:text-white transition">Primary School</a></li>
+                        <li><a href="#" class="hover:text-white transition">After School</a></li>
+                        <li><a href="#" class="hover:text-white transition">Summer Camp</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-phone mr-2"></i> +234 807 455 2156</li>
+                        <li><i class="fas fa-envelope mr-2"></i> info@treasurelandschools.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Ijebu Ode, Ogun State</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Treasureland Elementary School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load More functionality
+        document.getElementById('load-more-btn').addEventListener('click', function() {
+            const additionalTeachers = document.getElementById('additional-teachers');
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            
+            if (additionalTeachers.classList.contains('hidden')) {
+                additionalTeachers.classList.remove('hidden');
+                loadMoreBtn.innerHTML = '<i class="fas fa-minus mr-2"></i> Show Less Teachers';
+            } else {
+                additionalTeachers.classList.add('hidden');
+                loadMoreBtn.innerHTML = '<i class="fas fa-plus mr-2"></i> Load More Teachers';
+            }
+        });
+    </script>
+</body>
+</html>
