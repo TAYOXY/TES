@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore music, art, creative skills, culinary activities, dance, sports, games, and sewing at Treasureland Elementary School.">
+    <meta name="keywords" content="Treasureland extracurricular activities, music, art, tie dye, culinary, dance, sports, games, sewing">
+    <meta name="author" content="Treasureland Elementary School">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="TES-Logo-nobg.png">
+    <title>Extra-curricular Activities | Treasureland Elementary School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-green: #0e5d46;
+            --brand-green-deep: #0a473a;
+            --brand-gold: #d7b15d;
+            --brand-slate: #1f2a37;
+        }
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 6rem;
+        }
+
+        body {
+            background: #f6f7f4;
+            color: var(--brand-slate);
+        }
+
+        .activity-card {
+            border: 1px solid rgba(15, 73, 58, 0.08);
+            box-shadow: 0 18px 38px rgba(10, 71, 58, 0.06);
+        }
+
+        .activity-icon {
+            background: linear-gradient(135deg, #edf9f5, #f8f2e6);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            position: absolute;
+            right: 0;
+            bottom: -8px;
+            left: 0;
+            height: 2px;
+            background: var(--brand-gold);
+            content: '';
+            transform: scaleX(0);
+            transition: transform 0.2s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link:focus-visible::after {
+            transform: scaleX(1);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="headlines.css">
+    <script src="headlines.js" defer></script>
+</head>
+<body>
+    <nav class="sticky top-0 z-50 border-b border-slate-100 bg-white/95 shadow-sm backdrop-blur-md">
+        <div class="container mx-auto flex items-center justify-between px-6 py-4">
+            <a href="index.html" class="flex items-center">
+                <img src="TES-Logo-nobg.png" alt="Treasureland Elementary School logo" class="mr-3 h-10 w-auto">
+                <span class="flex flex-col leading-tight">
+                    <span class="text-xl font-black text-slate-900">TES</span>
+                    <span class="text-[10px] text-slate-600">Treasureland Elementary School</span>
+                </span>
+            </a>
+            <button type="button" id="mobile-menu-button" class="text-slate-700 md:hidden" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <div class="hidden items-center gap-6 text-sm font-medium text-slate-700 md:flex">
+                <a href="index.html" class="nav-link transition hover:text-[#0e5d46]">Home</a>
+                <a href="our-programs.html" class="nav-link transition hover:text-[#0e5d46]">Our Programs</a>
+                <a href="campus-life.html" class="nav-link transition hover:text-[#0e5d46]">Campus Life</a>
+                <div class="group relative">
+                    <button type="button" class="nav-link flex items-center whitespace-nowrap font-semibold text-[#0e5d46]" aria-haspopup="true">
+                        Extra-curricular Activities <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </button>
+                    <div class="absolute left-0 top-full mt-3 w-64 rounded-2xl border border-slate-100 bg-white shadow-xl opacity-0 invisible transition-all duration-300 group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible">
+                        <a href="#music" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Music</a>
+                        <a href="#art-creativity" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Art &amp; Creativity</a>
+                        <a href="#tie-dye" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Tie &amp; Dye</a>
+                        <a href="#makeup-artistry" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Makeup Artistry</a>
+                        <a href="#culinary" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Culinary Arts</a>
+                        <a href="#dance" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Dance</a>
+                        <a href="#sports-games" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Sports &amp; Games</a>
+                        <a href="#sewing" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Seamstress &amp; Sewing</a>
+                    </div>
+                </div>
+                <a href="news-and-events.html#updates" class="nav-link transition hover:text-[#0e5d46]">News &amp; Events</a>
+                <a href="index.html#contact" class="nav-link transition hover:text-[#0e5d46]">Contact</a>
+            </div>
+        </div>
+        <div id="mobile-menu" class="container mx-auto hidden px-6 pb-4 md:hidden">
+            <a href="index.html" class="block py-2 text-slate-700">Home</a>
+            <a href="our-programs.html" class="block py-2 text-slate-700">Our Programs</a>
+            <a href="campus-life.html" class="block py-2 text-slate-700">Campus Life</a>
+            <a href="#activities" class="block py-2 font-semibold text-[#0e5d46]">Extra-curricular Activities</a>
+            <a href="#music" class="block py-2 pl-5 text-slate-700">Music</a>
+            <a href="#art-creativity" class="block py-2 pl-5 text-slate-700">Art &amp; Creativity</a>
+            <a href="#tie-dye" class="block py-2 pl-5 text-slate-700">Tie &amp; Dye</a>
+            <a href="#makeup-artistry" class="block py-2 pl-5 text-slate-700">Makeup Artistry</a>
+            <a href="#culinary" class="block py-2 pl-5 text-slate-700">Culinary Arts</a>
+            <a href="#dance" class="block py-2 pl-5 text-slate-700">Dance</a>
+            <a href="#sports-games" class="block py-2 pl-5 text-slate-700">Sports &amp; Games</a>
+            <a href="#sewing" class="block py-2 pl-5 text-slate-700">Seamstress &amp; Sewing</a>
+            <a href="news-and-events.html#updates" class="block py-2 text-slate-700">News &amp; Events</a>
+            <a href="index.html#contact" class="block py-2 text-slate-700">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="bg-gradient-to-br from-[#062b24] via-[#0b4339] to-[#0d5a4a] text-white">
+            <div class="container mx-auto px-6 py-16 md:py-20">
+                <div class="max-w-3xl">
+                    <div class="text-xs font-bold uppercase tracking-[0.2em] text-[#f5e9c4]">Discover, create, and play</div>
+                    <h1 class="mt-4 text-4xl font-black md:text-5xl">Extra-curricular Activities</h1>
+                    <p class="mt-5 text-lg leading-8 text-slate-100">A range of creative, practical, performing, and sporting activities gives pupils more ways to explore their interests and develop new skills.</p>
+                    <a href="#activities" class="mt-7 inline-flex items-center rounded-full bg-[#d7b15d] px-6 py-3 font-bold text-[#10241d] transition hover:bg-[#e5c87a]">Explore activities <i class="fas fa-arrow-down ml-2"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="activities" class="py-16 md:py-20">
+            <div class="container mx-auto px-6">
+                <div class="mx-auto mb-12 max-w-3xl text-center">
+                    <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0e5d46]"><span class="h-0.5 w-10 rounded-full bg-[#d7b15d]"></span>Learning beyond the classroom</div>
+                    <h2 class="mt-4 text-3xl font-black text-slate-900 md:text-4xl">Find something to enjoy</h2>
+                    <p class="mt-4 text-lg leading-8 text-slate-600">From creative expression and practical skills to team sports and classic games, explore the activities available at Treasureland.</p>
+                </div>
+
+                <div class="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+                    <article id="music" class="activity-card scroll-mt-24 rounded-[1.5rem] bg-white p-7">
+                        <div class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46]"><i class="fas fa-music"></i></div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Music</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Discover rhythm, melody, singing, and musical expression while building confidence and listening skills.</p>
+                    </article>
+                    <article id="art-creativity" class="activity-card scroll-mt-24 rounded-[1.5rem] bg-white p-7">
+                        <div class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46]"><i class="fas fa-palette"></i></div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Art &amp; Creativity</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Experiment with colour, drawing, painting, and making original creations.</p>
+                    </article>
+                    <article id="tie-dye" class="activity-card scroll-mt-24 rounded-[1.5rem] bg-white p-7">
+                        <div class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46]"><i class="fas fa-fill-drip"></i></div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Tie &amp; Dye</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Explore patterns, colour combinations, and fabric design through tie-dye craft.</p>
+                    </article>
+                    <article id="makeup-artistry" class="activity-card scroll-mt-24 rounded-[1.5rem] bg-white p-7">
+                        <div class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46]"><i class="fas fa-star"></i></div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Makeup Artistry</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Try age-appropriate creative looks, colour design, and introductory makeup artistry.</p>
+                    </article>
+                    <article id="culinary" class="activity-card scroll-mt-24 rounded-[1.5rem] bg-white p-7">
+                        <div class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46]"><i class="fas fa-cookie-bite"></i></div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Culinary Arts</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Get hands-on with pastries, cooking, and baking while learning useful kitchen skills.</p>
+                    </article>
+                    <article id="dance" class="activity-card scroll-mt-24 rounded-[1.5rem] bg-white p-7">
+                        <div class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46]"><i class="fas fa-child"></i></div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Dance</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Move to music, learn dance steps, and express ideas through movement and performance.</p>
+                    </article>
+                    <article id="sports-games" class="activity-card scroll-mt-24 rounded-[1.5rem] bg-white p-7">
+                        <div class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46]"><i class="fas fa-volleyball-ball"></i></div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Sports &amp; Games</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Enjoy active sports such as basketball, football, volleyball, and table tennis, alongside ludo, ayo, chess, PlayStation, and Xbox 360 games.</p>
+                    </article>
+                    <article id="sewing" class="activity-card scroll-mt-24 rounded-[1.5rem] bg-white p-7">
+                        <div class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46]"><i class="fas fa-cut"></i></div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Seamstress &amp; Sewing</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Learn about fabric, stitches, simple sewing, and the basics of garment making.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-14">
+            <div class="container mx-auto flex flex-col gap-5 px-6 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                    <h2 class="text-2xl font-black text-slate-900">Want to learn more about Treasureland?</h2>
+                    <p class="mt-2 text-slate-600">Explore our programmes or get in touch with the school.</p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="our-programs.html" class="inline-flex items-center rounded-full border border-[#0e5d46] px-5 py-3 font-semibold text-[#0e5d46] transition hover:bg-[#edf9f5]">Our Programs</a>
+                    <a href="index.html#contact" class="inline-flex items-center rounded-full bg-[#0e5d46] px-5 py-3 font-semibold text-white transition hover:bg-[#0a473a]">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#10241d] py-8 text-center text-sm text-slate-300">
+        <a href="index.html" class="font-semibold text-white hover:text-[#f5e9c4]">Treasureland Elementary School</a>
+        <span class="mx-2">·</span><a href="news-and-events.html#updates" class="hover:text-white">News &amp; Events</a>
+        <span class="mx-2">·</span><span>&copy; 2026</span>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
+            mobileMenu.classList.toggle('hidden', isExpanded);
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+</html>

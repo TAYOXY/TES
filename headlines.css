@@ -1,0 +1,78 @@
+.headlines-bar {
+    overflow: hidden;
+    background: #0a473a;
+    color: #fff;
+}
+
+.headlines-inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.headlines-label {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 auto;
+    padding: 0.75rem 0;
+    background: #0a473a;
+    color: #f5e9c4;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.headlines-window {
+    flex: 1 1 0%;
+    min-width: 0;
+    overflow: hidden;
+    padding: 0.75rem 0;
+}
+
+.headlines-track {
+    display: flex;
+    width: max-content;
+    animation: headlines-scroll 36s linear infinite;
+}
+
+.headlines-group {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 2.5rem;
+    padding-right: 2.5rem;
+    white-space: nowrap;
+}
+
+.headlines-group a {
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.headlines-group a:hover,
+.headlines-group a:focus-visible {
+    color: #f5e9c4;
+}
+
+.headlines-window:hover .headlines-track,
+.headlines-window:focus-within .headlines-track {
+    animation-play-state: paused;
+}
+
+@keyframes headlines-scroll {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .headlines-track {
+        animation: none;
+    }
+}

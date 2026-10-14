@@ -166,6 +166,65 @@
             transform: translateY(-5px) scale(1.01);
         }
 
+        .facility-card {
+            border: 1px solid rgba(15, 73, 58, 0.08);
+            box-shadow: 0 18px 38px rgba(10, 71, 58, 0.06);
+            background: #ffffff;
+        }
+
+        .facility-more summary {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .facility-more summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .facility-more[open] .facility-more-icon {
+            transform: rotate(180deg);
+        }
+
+        .headlines-track {
+            display: flex;
+            width: max-content;
+            animation: headlines-scroll 36s linear infinite;
+        }
+
+        .headlines-group {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            gap: 2.5rem;
+            padding-right: 2.5rem;
+            white-space: nowrap;
+        }
+
+        .headlines-group a {
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .headlines-group a:hover {
+            color: #f5e9c4;
+        }
+
+        .headlines-window:hover .headlines-track,
+        .headlines-window:focus-within .headlines-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes headlines-scroll {
+            to { transform: translateX(-50%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .headlines-track {
+                animation: none;
+            }
+        }
+
         .navbar-scroll {
             transition: all 0.3s ease;
         }
@@ -197,6 +256,8 @@
             100% { width: 100%; }
         }
     </style>
+    <link rel="stylesheet" href="headlines.css">
+    <script src="headlines.js" defer></script>
 </head>
 <body class="bg-stone-100 text-slate-900">
     <!-- Preloader -->
@@ -265,6 +326,10 @@
                                 <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
                                 Our Staff
                             </a>
+                            <a href="campus-life.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
+                                Campus Life
+                            </a>
                         </div>
                     </div>
                     <div class="relative group">
@@ -286,8 +351,33 @@
                             </a>
                         </div>
                     </div>
-                    <a href="#gallery" class="nav-link hover:text-[#0e5d46] transition">News &amp; Events</a>
-                    <a href="#gallery" class="nav-link hover:text-[#0e5d46] transition">Gallery</a>
+                    <div class="relative group">
+                        <button type="button" class="nav-link flex items-center hover:text-[#0e5d46] transition">
+                            News &amp; Events <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-3 w-60 bg-white rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-slate-100">
+                            <a href="news-and-events.html#updates" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Latest Headlines</a>
+                            <a href="news-and-events.html#prefects" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">2026/2027 Prefects</a>
+                            <a href="news-and-events.html#admissions" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Admissions Update</a>
+                            <a href="news-and-events.html#campus-tours" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Campus Tours</a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button type="button" class="nav-link flex items-center whitespace-nowrap hover:text-[#0e5d46] transition">
+                            Extra-curricular Activities <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-3 w-64 bg-white rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-slate-100">
+                            <a href="extracurricular-activities.html#music" class="block px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Music</a>
+                            <a href="extracurricular-activities.html#art-creativity" class="block px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Art &amp; Creativity</a>
+                            <a href="extracurricular-activities.html#tie-dye" class="block px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Tie &amp; Dye</a>
+                            <a href="extracurricular-activities.html#makeup-artistry" class="block px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Makeup Artistry</a>
+                            <a href="extracurricular-activities.html#culinary" class="block px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Culinary Arts</a>
+                            <a href="extracurricular-activities.html#dance" class="block px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Dance</a>
+                            <a href="extracurricular-activities.html#sports-games" class="block px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Sports &amp; Games</a>
+                            <a href="extracurricular-activities.html#sewing" class="block px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Seamstress &amp; Sewing</a>
+                        </div>
+                    </div>
+                    <a href="campus-life.html" class="nav-link hover:text-[#0e5d46] transition">Gallery</a>
                     <a href="#contact" class="nav-link hover:text-[#0e5d46] transition">Contact</a>
                     <div id="apply-now" class="relative group">
                         <button type="button" class="bg-[#0e5d46] text-white px-5 py-2.5 rounded-full hover:bg-[#0a473a] transition flex items-center text-sm font-semibold shadow-md">
@@ -337,6 +427,10 @@
                     <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     Our Staff
                 </a>
+                <a href="campus-life.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Campus Life
+                </a>
                 <a href="admissions.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
                     <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     Admissions
@@ -349,7 +443,32 @@
                     <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     TES Portal
                 </a>
-                <a href="#gallery" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
+                <a href="news-and-events.html#updates" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    News &amp; Events
+                </a>
+                <a href="news-and-events.html#prefects" class="flex items-center py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">
+                    2026/2027 Prefects
+                </a>
+                <a href="news-and-events.html#admissions" class="flex items-center py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">
+                    Admissions Update
+                </a>
+                <a href="news-and-events.html#campus-tours" class="flex items-center py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">
+                    Campus Tours
+                </a>
+                <a href="extracurricular-activities.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Extra-curricular Activities
+                </a>
+                <a href="extracurricular-activities.html#music" class="block py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">Music</a>
+                <a href="extracurricular-activities.html#art-creativity" class="block py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">Art &amp; Creativity</a>
+                <a href="extracurricular-activities.html#tie-dye" class="block py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">Tie &amp; Dye</a>
+                <a href="extracurricular-activities.html#makeup-artistry" class="block py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">Makeup Artistry</a>
+                <a href="extracurricular-activities.html#culinary" class="block py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">Culinary Arts</a>
+                <a href="extracurricular-activities.html#dance" class="block py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">Dance</a>
+                <a href="extracurricular-activities.html#sports-games" class="block py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">Sports &amp; Games</a>
+                <a href="extracurricular-activities.html#sewing" class="block py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">Seamstress &amp; Sewing</a>
+                <a href="campus-life.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
                     <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     Gallery
                 </a>
@@ -374,6 +493,28 @@
             </div>
         </div>
     </nav>
+
+    <aside class="headlines-bar overflow-hidden bg-[#0a473a] text-white" aria-label="Latest school headlines">
+        <div class="container mx-auto flex items-center gap-4 px-6">
+            <span class="relative z-10 flex shrink-0 items-center gap-2 bg-[#0a473a] py-3 text-xs font-black uppercase tracking-[0.16em] text-[#f5e9c4]">
+                <i class="fas fa-bullhorn"></i> Headlines
+            </span>
+            <div class="headlines-window min-w-0 flex-1 overflow-hidden py-3">
+                <div class="headlines-track">
+                    <div class="headlines-group">
+                        <a href="news-and-events.html#prefects"><span class="text-[#d7b15d]">New</span> Meet the 2026/2027 student prefects <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                        <a href="news-and-events.html#admissions"><span class="text-[#d7b15d]">Admissions</span> Applications are open for the 2026/2027 academic year <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                        <a href="news-and-events.html#campus-tours"><span class="text-[#d7b15d]">Visit TES</span> Book a campus tour and discover our school <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                    <div class="headlines-group" aria-hidden="true">
+                        <a href="news-and-events.html#prefects" tabindex="-1"><span class="text-[#d7b15d]">New</span> Meet the 2026/2027 student prefects <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                        <a href="news-and-events.html#admissions" tabindex="-1"><span class="text-[#d7b15d]">Admissions</span> Applications are open for the 2026/2027 academic year <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                        <a href="news-and-events.html#campus-tours" tabindex="-1"><span class="text-[#d7b15d]">Visit TES</span> Book a campus tour and discover our school <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
 
     <main>
         <section class="hero-shell relative overflow-hidden">
@@ -616,32 +757,33 @@
             </div>
         </section>
 
-        <section id="gallery" class="py-20 bg-[#f7faf8]">
+        <section id="gallery" class="py-16 bg-[#f7faf8]">
             <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <div class="section-tag">Media</div>
-                    <h2 class="mt-4 text-3xl md:text-4xl font-black text-slate-900">A vibrant school life captured in moments</h2>
+                <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <div class="section-tag">A glimpse of campus life</div>
+                        <h2 class="mt-4 text-3xl font-black text-slate-900 md:text-4xl">A few spaces to explore</h2>
+                        <p class="mt-3 max-w-2xl leading-7 text-slate-600">Take a quick look at life around school, then visit Campus Life to browse all the photos.</p>
+                    </div>
+                    <a href="campus-life.html" class="inline-flex shrink-0 items-center justify-center rounded-full bg-[#0e5d46] px-6 py-3 font-semibold text-white transition hover:bg-[#0a473a]">View all campus photos <i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
-
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="gallery-item overflow-hidden rounded-[1.5rem] shadow-sm border border-slate-100">
-                        <img src="img2.jpeg" alt="Learning activity" class="w-full h-72 object-cover">
-                    </div>
-                    <div class="gallery-item overflow-hidden rounded-[1.5rem] shadow-sm border border-slate-100">
-                        <img src="img3.jpeg" alt="Student lesson" class="w-full h-72 object-cover">
-                    </div>
-                    <div class="gallery-item overflow-hidden rounded-[1.5rem] shadow-sm border border-slate-100">
-                        <img src="img4.jpeg" alt="School event" class="w-full h-72 object-cover">
-                    </div>
-                    <div class="gallery-item overflow-hidden rounded-[1.5rem] shadow-sm border border-slate-100">
-                        <img src="img5.jpeg" alt="Students in activity" class="w-full h-72 object-cover">
-                    </div>
-                    <div class="gallery-item overflow-hidden rounded-[1.5rem] shadow-sm border border-slate-100">
-                        <img src="img6.jpeg" alt="Classroom students" class="w-full h-72 object-cover">
-                    </div>
-                    <div class="gallery-item overflow-hidden rounded-[1.5rem] shadow-sm border border-slate-100">
-                        <img src="img1.jpeg" alt="School campus" class="w-full h-72 object-cover">
-                    </div>
+                <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+                    <a href="campus-life.html#creche" class="group relative overflow-hidden rounded-2xl shadow-sm">
+                        <img src="creche department/WhatsApp Image 2026-10-13 at 11.19.57 AM (2).jpeg" alt="A peek inside the creche classroom" class="h-44 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-4 pb-3 pt-8 font-semibold text-white">Creche</span>
+                    </a>
+                    <a href="campus-life.html#sports" class="group relative overflow-hidden rounded-2xl shadow-sm">
+                        <img src="school field/WhatsApp Image 2026-10-13 at 11.19.23 AM.jpeg" alt="A peek at the school sports field" class="h-44 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-4 pb-3 pt-8 font-semibold text-white">Sports Field &amp; Play</span>
+                    </a>
+                    <a href="campus-life.html#playgroup" class="group relative overflow-hidden rounded-2xl shadow-sm">
+                        <img src="play group classroom/WhatsApp Image 2026-10-13 at 11.20.00 AM.jpeg" alt="A peek inside the playgroup classroom" class="h-44 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-4 pb-3 pt-8 font-semibold text-white">Playgroup</span>
+                    </a>
+                    <a href="campus-life.html#health-bay" class="group relative overflow-hidden rounded-2xl shadow-sm">
+                        <img src="health bay/WhatsApp Image 2026-10-13 at 11.19.59 AM.jpeg" alt="A peek inside the school health bay" class="h-44 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-4 pb-3 pt-8 font-semibold text-white">Health Bay</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -757,7 +899,8 @@
                     <ul class="space-y-2 text-slate-300">
                         <li><a href="our-programs.html" class="hover:text-white transition">Our school</a></li>
                         <li><a href="admissions.html" class="hover:text-white transition">Admissions</a></li>
-                        <li><a href="#gallery" class="hover:text-white transition">Gallery</a></li>
+                        <li><a href="news-and-events.html#updates" class="hover:text-white transition">News &amp; Events</a></li>
+                        <li><a href="campus-life.html" class="hover:text-white transition">Campus Life Gallery</a></li>
                         <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
                     </ul>
                 </div>
