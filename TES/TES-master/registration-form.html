@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Admission Registration – Treasureland Elementary School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        :root {
+            --brand-green: #0e5d46;
+            --brand-green-deep: #0a473a;
+            --brand-gold: #d7b15d;
+            --brand-soft: #f5f7f3;
+            --brand-slate: #1f2a37;
+        }
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #f6f7f4;
+            color: var(--brand-slate);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(120deg, rgba(7, 35, 29, 0.92), rgba(16, 93, 70, 0.8));
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .navbar-scroll {
+            transition: all 0.3s ease;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bg-purple-600,
+        .bg-purple-500,
+        .bg-purple-50,
+        .bg-purple-100,
+        .text-purple-600,
+        .text-purple-500,
+        .text-purple-400,
+        .hover\:bg-purple-700:hover,
+        .hover\:text-purple-600:hover {
+            transition: all 0.2s ease;
+        }
+
+        .bg-purple-600,
+        .bg-purple-500 {
+            background-color: var(--brand-green) !important;
+        }
+
+        .hover\:bg-purple-700:hover {
+            background-color: var(--brand-green-deep) !important;
+        }
+
+        .text-purple-600,
+        .text-purple-500 {
+            color: var(--brand-green) !important;
+        }
+
+        .text-purple-400 {
+            color: var(--brand-gold) !important;
+        }
+
+        .bg-purple-50,
+        .bg-purple-100 {
+            background-color: rgba(14, 93, 70, 0.06) !important;
+        }
+
+        .hover\:text-purple-600:hover {
+            color: var(--brand-green) !important;
+        }
+        
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: #0e5d46;
+            box-shadow: 0 0 0 3px rgba(14, 93, 70, 0.1);
+        }
+        
+        .required {
+            color: #ef4444;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full bg-white shadow-md navbar-scroll z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <button type="button" id="logo-button" class="flex items-center md:hidden" aria-label="Toggle mobile menu">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-10 w-auto mr-3">
+                    <span class="flex flex-col">
+                        <span class="text-xl font-bold text-gray-800">TES</span>
+                        <span class="text-xs text-gray-600">Treasureland Elementary School</span>
+                    </span>
+                </button>
+                <a href="index.html" class="hidden md:flex items-center">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-10 w-auto mr-3">
+                    <span class="flex flex-col">
+                        <span class="text-xl font-bold text-gray-800">TES</span>
+                        <span class="text-xs text-gray-600">Treasureland Elementary School</span>
+                    </span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <div class="relative group">
+                        <button type="button" class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            About TES <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="founders-message.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Founder's Message
+                            </a>
+                            <a href="our-history.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Our History
+                            </a>
+                            <a href="montessori-philosophy.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Montessori Philosophy
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button type="button" class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            Our School <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="our-programs.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Our Programs
+                            </a>
+                            <a href="our-staff.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Our Staff
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            Academics <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="admissions.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Admissions
+                            </a>
+                            <a href="classes-and-teachers.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                Classes and Teachers
+                            </a>
+                            <a href="tes-portal.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                                TES Portal
+                            </a>
+                        </div>
+                    </div>
+                    <a href="index.html#news-events" class="text-gray-700 hover:text-purple-600 transition">News & Events</a>
+                    <a href="index.html#gallery" class="text-gray-700 hover:text-purple-600 transition">Gallery</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-purple-600 transition">Contact Us</a>
+                    <div class="relative group">
+                        <button class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition flex items-center">
+                            Apply Now <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full right-0 mt-2 w-56 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="registration-form.html" class="block px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 border-b border-gray-100">
+                                <i class="fas fa-edit mr-2"></i> Online Form Fill
+                            </a>
+                            <a href="TES-Registration-Form.html" target="_blank" class="block px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <i class="fas fa-download mr-2"></i> Downloadable Version
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button type="button" id="mobile-menu-button" class="md:hidden text-gray-700" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Home
+                </a>
+                <a href="founders-message.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Founder's Message
+                </a>
+                <a href="our-history.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Our History
+                </a>
+                <a href="montessori-philosophy.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Montessori Philosophy
+                </a>
+                <a href="our-programs.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Our Programs
+                </a>
+                <a href="our-staff.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Our Staff
+                </a>
+                <a href="admissions.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Admissions
+                </a>
+                <a href="classes-and-teachers.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Classes and Teachers
+                </a>
+                <a href="tes-portal.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    TES Portal
+                </a>
+                <a href="#gallery" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    News &amp; Events
+                </a>
+                <a href="#gallery" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Gallery
+                </a>
+                <a href="#contact" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    Contact Us
+                </a>
+                <div class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition w-full mt-4">
+                    <button type="button" class="w-full text-left flex items-center justify-between" onclick="this.parentElement.classList.toggle('expanded')">
+                        <span>Apply Now</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="mt-2 space-y-2 hidden">
+                        <a href="registration-form.html" class="block bg-white text-purple-600 px-4 py-2 rounded-full text-center hover:bg-gray-100 transition">
+                            <i class="fas fa-edit mr-2"></i> Online Form Fill
+                        </a>
+                        <a href="registration-form.html#printable" target="_blank" class="block bg-white text-purple-600 px-4 py-2 rounded-full text-center hover:bg-gray-100 transition">
+                            <i class="fas fa-download mr-2"></i> Downloadable Version
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero-gradient py-20 pt-32">
+        <div class="container mx-auto px-6">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">New Admission Registration</h1>
+                <div class="w-24 h-1 bg-white mx-auto mb-6"></div>
+                <p class="text-xl text-gray-100 max-w-3xl mx-auto">
+                    Register your child for admission at Treasureland Elementary School
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- Form Introduction -->
+                <div class="bg-purple-50 p-8 rounded-xl mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Admission Requirements</h2>
+                    <p class="text-gray-700 mb-4">
+                        Thank you for your interest in Treasureland Elementary School. Please complete this form to begin the admission process for your child.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                            <span>Child must be 18 months - 11 years</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                            <span>Complete all required fields</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                            <span>Attach recent passport photograph</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                            <span>Submit birth certificate copy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Form -->
+                <form id="registrationForm" action="#" method="POST" class="space-y-8">
+                    
+                    <!-- Child's Information -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-child text-purple-600 mr-3"></i>
+                            Child's Information
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    First Name <span class="required">*</span>
+                                </label>
+                                <input type="text" name="childFirstName" required 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Last Name <span class="required">*</span>
+                                </label>
+                                <input type="text" name="childLastName" required 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Date of Birth <span class="required">*</span>
+                                </label>
+                                <input type="date" name="childDOB" required 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Gender <span class="required">*</span>
+                                </label>
+                                <select name="childGender" required 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Age <span class="required">*</span>
+                                </label>
+                                <input type="number" name="childAge" required min="1" max="11"
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Class Applying For <span class="required">*</span>
+                                </label>
+                                <select name="classApplying" required 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                                    <option value="">Select Class</option>
+                                    <option value="creche">Crèche (18 months - 2 years)</option>
+                                    <option value="toddler">Toddler (2-3 years)</option>
+                                    <option value="nursery1">Nursery 1 (3-4 years)</option>
+                                    <option value="nursery2">Nursery 2 (4-5 years)</option>
+                                    <option value="kindergarten">Kindergarten (5-6 years)</option>
+                                    <option value="grade1">Grade 1 (6-7 years)</option>
+                                    <option value="grade2">Grade 2 (7-8 years)</option>
+                                    <option value="grade3">Grade 3 (8-9 years)</option>
+                                    <option value="grade4">Grade 4 (9-10 years)</option>
+                                    <option value="grade5">Grade 5 (10-11 years)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Previous School (if any)
+                            </label>
+                            <input type="text" name="previousSchool" 
+                                class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                        </div>
+                    </div>
+
+                    <!-- Parent/Guardian Information -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-user-friends text-purple-600 mr-3"></i>
+                            Parent/Guardian Information
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Father's Full Name <span class="required">*</span>
+                                </label>
+                                <input type="text" name="fatherName" required 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Mother's Full Name <span class="required">*</span>
+                                </label>
+                                <input type="text" name="motherName" required 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Phone Number <span class="required">*</span>
+                                </label>
+                                <input type="tel" name="phoneNumber" required 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Email Address <span class="required">*</span>
+                                </label>
+                                <input type="email" name="emailAddress" required 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Occupation
+                                </label>
+                                <input type="text" name="occupation" 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Employer
+                                </label>
+                                <input type="text" name="employer" 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Address Information -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-home text-purple-600 mr-3"></i>
+                            Address Information
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Residential Address <span class="required">*</span>
+                                </label>
+                                <input type="text" name="residentialAddress" required 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    City <span class="required">*</span>
+                                </label>
+                                <input type="text" name="city" required 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    State <span class="required">*</span>
+                                </label>
+                                <input type="text" name="state" required 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medical Information -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-heartbeat text-purple-600 mr-3"></i>
+                            Medical Information
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Any Medical Conditions? <span class="required">*</span>
+                                </label>
+                                <select name="medicalConditions" required 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                                    <option value="">Select Option</option>
+                                    <option value="no">No</option>
+                                    <option value="yes">Yes</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    If yes, please specify
+                                </label>
+                                <textarea name="medicalDetails" rows="3"
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none"></textarea>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Allergies (if any)
+                                </label>
+                                <textarea name="allergies" rows="3"
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none"></textarea>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Emergency Contact Name <span class="required">*</span>
+                                </label>
+                                <input type="text" name="emergencyContact" required 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Emergency Contact Phone <span class="required">*</span>
+                                </label>
+                                <input type="tel" name="emergencyPhone" required 
+                                    class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Documents Required -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-file-alt text-purple-600 mr-3"></i>
+                            Documents Required
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="passportPhoto" name="passportPhoto" required class="mr-3">
+                                <label for="passportPhoto" class="text-gray-700">
+                                    Child's recent passport photograph <span class="required">*</span>
+                                </label>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <input type="checkbox" id="birthCertificate" name="birthCertificate" required class="mr-3">
+                                <label for="birthCertificate" class="text-gray-700">
+                                    Copy of birth certificate <span class="required">*</span>
+                                </label>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <input type="checkbox" id="immunizationCard" name="immunizationCard" class="mr-3">
+                                <label for="immunizationCard" class="text-gray-700">
+                                    Immunization card (if available)
+                                </label>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <input type="checkbox" id="previousReport" name="previousReport" class="mr-3">
+                                <label for="previousReport" class="text-gray-700">
+                                    Previous school report (if applicable)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-3"></i>
+                            Terms and Conditions
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-sm text-gray-600 mb-3">
+                                    By submitting this form, I confirm that:
+                                </p>
+                                <ul class="text-sm text-gray-600 space-y-2 ml-4">
+                                    <li>• All information provided is accurate and complete</li>
+                                    <li>• I understand that false information may lead to disqualification</li>
+                                    <li>• I agree to abide by the school's rules and regulations</li>
+                                    <li>• I authorize the school to contact me for admission purposes</li>
+                                    <li>• I understand that submission of this form does not guarantee admission</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <input type="checkbox" id="termsAccepted" name="termsAccepted" required class="mr-3">
+                                <label for="termsAccepted" class="text-gray-700">
+                                    I accept the terms and conditions <span class="required">*</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" 
+                            class="bg-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-700 transition transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i> Submit Registration Form
+                        </button>
+                        <p class="text-gray-600 mt-4 text-sm">
+                            You will be contacted by a representative of Treasureland Elementary School
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-graduation-cap text-2xl text-purple-400 mr-2"></i>
+                        <span class="text-lg font-semibold">Treasureland Elementary</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Nurturing the leaders of tomorrow through excellence in education.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="admissions.html" class="hover:text-white transition">Admissions</a></li>
+                        <li><a href="registration-form.html" class="hover:text-white transition">Registration</a></li>
+                        <li><a href="index.html#gallery" class="hover:text-white transition">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Academics</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="admissions.html" class="hover:text-white transition">Admissions</a></li>
+                        <li><a href="classes-and-teachers.html" class="hover:text-white transition">Classes & Teachers</a></li>
+                        <li><a href="tes-portal.html" class="hover:text-white transition">TES Portal</a></li>
+                        <li><a href="#" class="hover:text-white transition">Academic Calendar</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-phone mr-2"></i> +234 807 455 2156</li>
+                        <li><i class="fas fa-envelope mr-2"></i> info@treasurelandschools.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Ijebu Ode, Ogun State</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Treasureland Elementary School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Form submission handler
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // Show success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'fixed top-20 right-4 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg z-50';
+            successMessage.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle mr-3"></i>
+                    <div>
+                        <h4 class="font-semibold">Registration Submitted!</h4>
+                        <p class="text-sm">We will contact you soon regarding the admission process.</p>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(successMessage);
+            
+            // Remove message after 5 seconds
+            setTimeout(() => {
+                successMessage.remove();
+            }, 5000);
+            
+            // Reset form
+            this.reset();
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Mobile Apply Now dropdown toggle
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('.bg-purple-600 button') && e.target.closest('.w-full')) {
+                const dropdown = e.target.nextElementSibling;
+                if (dropdown && dropdown.classList.contains('space-y-2')) {
+                    dropdown.classList.toggle('hidden');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
