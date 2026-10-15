@@ -2,14 +2,15 @@
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const logoButton = document.getElementById('logo-button');
 const mobileMenu = document.getElementById('mobile-menu');
+const navbar = document.getElementById('navbar');
 
-if (mobileMenuButton) {
+if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
 }
 
-if (logoButton) {
+if (logoButton && mobileMenu) {
     logoButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
@@ -28,7 +29,7 @@ document.addEventListener('click', (e) => {
 
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
-    const navbar = document.getElementById('navbar');
+    if (!navbar) return;
     if (window.scrollY > 50) {
         navbar.classList.add('shadow-lg');
     } else {
@@ -47,7 +48,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 block: 'start'
             });
             // Close mobile menu if open
-            mobileMenu.classList.add('hidden');
+            if (mobileMenu) {
+                mobileMenu.classList.add('hidden');
+            }
         }
     });
 });
@@ -58,19 +61,21 @@ const observerOptions = {
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
+if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
 
-// Observe all sections
-document.querySelectorAll('section').forEach(section => {
-    observer.observe(section);
-});
+    // Observe all sections
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+}
 
 // Gallery lightbox effect
 const galleryItems = document.querySelectorAll('.gallery-item');
@@ -310,16 +315,18 @@ document.addEventListener('mousedown', () => {
 });
 
 // Performance optimization - lazy loading images
-const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const img = entry.target;
-            img.classList.add('loaded');
-            observer.unobserve(img);
-        }
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.classList.add('loaded');
+                observer.unobserve(img);
+            }
+        });
     });
-});
 
-document.querySelectorAll('img').forEach(img => {
-    imageObserver.observe(img);
-});
+    document.querySelectorAll('img').forEach(img => {
+        imageObserver.observe(img);
+    });
+}
