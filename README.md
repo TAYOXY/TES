@@ -5,7 +5,7 @@ A modern, responsive website for Treasureland Elementary School built with HTML5
 ## Features
 
 ### 🎨 Modern Design
-- Clean, professional interface with gradient accents
+- Clean, professional interface with a green-and-gold palette
 - Responsive design that works on all devices
 - Smooth animations and transitions
 - Modern UI components (cards, buttons, navigation)
@@ -21,10 +21,12 @@ A modern, responsive website for Treasureland Elementary School built with HTML5
 - Lightbox functionality for full-screen viewing
 - Keyboard navigation support
 - Smooth transitions and hover effects
+- Dedicated albums for campus life and Inter-house Sports
 
 ### ⚡ Interactive Features
 - Smooth scrolling navigation
 - Sticky header with scroll effects
+- Randomized homepage photo carousel with captions and pause controls
 - Interactive gallery with lightbox
 - Hover animations on cards
 - Mobile menu toggle
@@ -50,16 +52,23 @@ A modern, responsive website for Treasureland Elementary School built with HTML5
 
 ```
 TES/
-├── index.html          # Main HTML file
-├── script.js           # JavaScript functionality
-├── img1.jpeg           # Hero image
-├── img2.jpeg           # Gallery image
-├── img3.jpeg           # Gallery image
-├── img4.jpeg           # Gallery image
-├── img5.jpeg           # Gallery image
-├── img6.jpeg           # Gallery image
-└── README.md           # This file
+├── index.html
+├── admissions.html
+├── campus-life.html
+├── ...                 # Other public pages stay at the root for simple static hosting
+├── assets/
+│   ├── css/            # Shared stylesheets
+│   ├── js/             # Site scripts and homepage slideshow
+│   └── images/
+│       ├── brand/
+│       ├── campus/     # Buildings, classrooms, and facilities
+│       ├── gallery/    # Inter-house sports and prefects
+│       └── staff/      # Teachers, school leaders, and administrators
+├── tools/              # Standalone utilities
+└── README.md
 ```
+
+Open `index.html` to view the homepage. Local development can use any static web server; page URLs remain at the repository root.
 
 ## Sections
 
@@ -114,7 +123,7 @@ TES/
 
 ### Setup
 1. Clone or download the project files
-2. Ensure all images (img1.jpeg - img6.jpeg) are in the root directory
+2. Ensure all images (assets/images/campus/buildings/img1.jpeg - assets/images/campus/buildings/img6.jpeg) are in the root directory
 3. Open `index.html` in a web browser
 4. For development, use a local server:
    ```bash
@@ -131,13 +140,13 @@ TES/
 ### Customization
 
 #### Colors
-The primary color scheme uses purple gradients. To customize:
-- Find `--purple-600` classes in the HTML
-- Replace with your preferred color classes
-- Update gradient definitions in the `<style>` section
+The site uses a green-and-gold palette. To customize:
+- Update the brand color variables and matching utility classes in the page styles
+- Keep text and interactive states accessible against their backgrounds
 
 #### Images
-- Replace `img1.jpeg` - `img6.jpeg` with your own images
+- Keep images in the appropriate subfolder under `assets/images/`
+- Update references in the HTML or JavaScript when replacing or moving images
 - Maintain aspect ratios for best results
 - Optimize images for web (recommended: 1920x1080px max)
 

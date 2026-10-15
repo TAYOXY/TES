@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="descr
-    iption" content="Treasureland Elementary School - Nurturing the leaders of tomorrow through excellence in education. Montessori-based education in Ijebu Ode, Ogun State, Nigeria.">
+    <meta name="description" content="Treasureland Elementary School nurtures confident, compassionate learners through Montessori-inspired education in Ijebu Ode, Ogun State, Nigeria.">
     <meta name="keywords" content="Treasureland Elementary School, Montessori education, Ijebu Ode, Ogun State, Nigeria, primary education, child-centered learning">
     <meta name="author" content="Treasureland Elementary School">
     <meta name="robots" content="index, follow">
-    <link rel="icon" type="image/png" href="TES-Logo-nobg.png">
+    <link rel="icon" type="image/png" href="assets/images/brand/TES-Logo-nobg.png">
     <title>Treasureland Elementary School – Creativity, Innovation, Diversity</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -166,6 +165,34 @@
             transform: translateY(-5px) scale(1.01);
         }
 
+        .home-carousel-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 800ms ease;
+        }
+
+        .home-carousel-image.is-active {
+            opacity: 1;
+        }
+
+        .home-carousel-caption {
+            transition: opacity 350ms ease, transform 350ms ease;
+        }
+
+        .home-carousel-caption.is-changing {
+            opacity: 0;
+            transform: translateY(0.5rem);
+        }
+
+        .home-carousel-dot[aria-current="true"] {
+            width: 1.75rem;
+            background: #f5e9c4;
+        }
+
         .facility-card {
             border: 1px solid rgba(15, 73, 58, 0.08);
             box-shadow: 0 18px 38px rgba(10, 71, 58, 0.06);
@@ -223,6 +250,11 @@
             .headlines-track {
                 animation: none;
             }
+
+            .home-carousel-image,
+            .home-carousel-caption {
+                transition: none;
+            }
         }
 
         .navbar-scroll {
@@ -256,14 +288,15 @@
             100% { width: 100%; }
         }
     </style>
-    <link rel="stylesheet" href="headlines.css">
-    <script src="headlines.js" defer></script>
+    <link rel="stylesheet" href="assets/css/headlines.css">
+    <script src="assets/js/headlines.js" defer></script>
+    <script src="assets/js/homepage-carousel.js" defer></script>
 </head>
 <body class="bg-stone-100 text-slate-900">
     <!-- Preloader -->
     <div id="preloader" class="fixed inset-0 bg-white z-[100] flex items-center justify-center">
         <div class="text-center">
-            <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-20 w-auto mb-4 animate-pulse">
+            <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-20 w-auto mb-4 animate-pulse">
             <div class="w-48 h-1 bg-gray-200 rounded-full overflow-hidden">
                 <div class="h-full bg-[#0e5d46] animate-[loading_1.5s_ease-in-out_infinite]"></div>
             </div>
@@ -279,14 +312,14 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <button type="button" id="logo-button" class="flex items-center md:hidden" aria-label="Toggle mobile menu">
-                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-10 w-auto mr-3">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-10 w-auto mr-3">
                     <span class="flex flex-col items-start leading-none">
                         <span class="text-xl font-black text-slate-800">TES</span>
                         <span class="text-[10px] text-slate-600">Treasureland</span>
                     </span>
                 </button>
                 <a href="index.html" class="hidden md:flex items-center">
-                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-10 w-auto mr-3">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-10 w-auto mr-3">
                     <span class="flex flex-col items-start leading-none">
                         <span class="text-xl font-black text-slate-900">TES</span>
                         <span class="text-[10px] text-slate-600">Treasureland Elementary School</span>
@@ -300,15 +333,15 @@
                         </button>
                         <div class="absolute top-full left-0 mt-3 w-52 bg-white rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-slate-100">
                             <a href="founders-message.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
                                 Founder's Message
                             </a>
                             <a href="our-history.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
                                 Our History
                             </a>
                             <a href="montessori-philosophy.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
                                 Montessori Philosophy
                             </a>
                         </div>
@@ -319,15 +352,15 @@
                         </button>
                         <div class="absolute top-full left-0 mt-3 w-52 bg-white rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-slate-100">
                             <a href="our-programs.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
                                 Our Programs
                             </a>
                             <a href="our-staff.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
                                 Our Staff
                             </a>
                             <a href="campus-life.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
                                 Campus Life
                             </a>
                         </div>
@@ -338,15 +371,15 @@
                         </button>
                         <div class="absolute top-full left-0 mt-3 w-52 bg-white rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-slate-100">
                             <a href="admissions.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
                                 Admissions
                             </a>
                             <a href="classes-and-teachers.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
                                 Classes and Teachers
                             </a>
                             <a href="tes-portal.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
                                 TES Portal
                             </a>
                         </div>
@@ -408,43 +441,43 @@
 
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
                 <a href="founders-message.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     Founder's Message
                 </a>
                 <a href="our-history.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     Our History
                 </a>
                 <a href="montessori-philosophy.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     Montessori Philosophy
                 </a>
                 <a href="our-programs.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     Our Programs
                 </a>
                 <a href="our-staff.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     Our Staff
                 </a>
                 <a href="campus-life.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     Campus Life
                 </a>
                 <a href="admissions.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     Admissions
                 </a>
                 <a href="classes-and-teachers.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     Classes and Teachers
                 </a>
                 <a href="tes-portal.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     TES Portal
                 </a>
                 <a href="news-and-events.html#updates" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     News &amp; Events
                 </a>
                 <a href="news-and-events.html#prefects" class="flex items-center py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">
@@ -457,7 +490,7 @@
                     Campus Tours
                 </a>
                 <a href="extracurricular-activities.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     Extra-curricular Activities
                 </a>
                 <a href="extracurricular-activities.html#music" class="block py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">Music</a>
@@ -469,11 +502,11 @@
                 <a href="extracurricular-activities.html#sports-games" class="block py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">Sports &amp; Games</a>
                 <a href="extracurricular-activities.html#sewing" class="block py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">Seamstress &amp; Sewing</a>
                 <a href="campus-life.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     Gallery
                 </a>
                 <a href="#contact" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
                     Contact Us
                 </a>
                 <div class="bg-[#0e5d46] text-white px-4 py-3 rounded-full mt-4">
@@ -518,14 +551,13 @@
 
     <main>
         <section class="hero-shell relative overflow-hidden">
-            <div class="absolute inset-0 bg-[url('img1.jpeg')] bg-cover bg-center opacity-25"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-[#062b24]/90 via-[#0b4339]/80 to-[#0d5a4a]/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-[#062b24] via-[#0b4339] to-[#0d5a4a]"></div>
 
             <div class="relative container mx-auto px-6 py-20 lg:py-24">
                 <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
                     <div class="text-white fade-in">
                         <span class="hero-badge inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2">
-                            leading montessori school in Ijebu Ode &amp; nigeria
+                            Montessori-inspired learning in Ijebu Ode, Nigeria
                         </span>
                         <h1 class="mt-6 text-4xl md:text-5xl xl:text-6xl font-black leading-[1.05] tracking-[-0.04em]">
                             Where every child is inspired to learn, lead and thrive.
@@ -542,44 +574,42 @@
                             </a>
                         </div>
 
-                        <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl">
+                        <div class="mt-10 grid grid-cols-2 gap-3 max-w-2xl">
                             <div class="stats-tile rounded-2xl p-4">
-                                <div class="text-2xl font-black">2011</div>
-                                <div class="text-[10px] uppercase tracking-[0.15em] text-slate-200">Founded</div>
+                                <div class="font-bold text-white">Early foundations</div>
+                                <div class="mt-1 text-xs leading-5 text-slate-200">Curiosity, confidence, and a love of learning</div>
                             </div>
                             <div class="stats-tile rounded-2xl p-4">
-                                <div class="text-2xl font-black">300+</div>
-                                <div class="text-[10px] uppercase tracking-[0.15em] text-slate-200">Students</div>
+                                <div class="font-bold text-white">A place to belong</div>
+                                <div class="mt-1 text-xs leading-5 text-slate-200">Respect for every child's story and potential</div>
                             </div>
                             <div class="stats-tile rounded-2xl p-4">
-                                <div class="text-2xl font-black">20+</div>
-                                <div class="text-[10px] uppercase tracking-[0.15em] text-slate-200">Teachers</div>
+                                <div class="font-bold text-white">Learning by doing</div>
+                                <div class="mt-1 text-xs leading-5 text-slate-200">Play, discovery, and hands-on experiences</div>
                             </div>
                             <div class="stats-tile rounded-2xl p-4">
-                                <div class="text-2xl font-black">100%</div>
-                                <div class="text-[10px] uppercase tracking-[0.15em] text-slate-200">Care</div>
+                                <div class="font-bold text-white">Growing together</div>
+                                <div class="mt-1 text-xs leading-5 text-slate-200">Knowledge and character for a brighter future</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="relative fade-in">
-                        <div class="rounded-[2rem] overflow-hidden shadow-[0_35px_90px_rgba(3,18,18,0.45)] border border-white/20">
-                            <img src="img1.jpeg" alt="Students learning together at Treasureland Elementary School" class="w-full h-[560px] object-cover">
-                        </div>
-                        <div class="absolute -bottom-5 left-5 bg-white rounded-2xl shadow-xl p-4 max-w-xs border border-slate-100">
-                            <div class="flex items-center gap-3">
-                                <div class="w-12 h-12 rounded-full bg-[#edf9f5] flex items-center justify-center text-[#0e5d46]">
-                                    <i class="fas fa-award text-xl"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-bold text-slate-800">Excellence in Education</div>
-                                    <div class="text-xs text-slate-500">Strong foundations for every child</div>
+                    <div class="fade-in">
+                        <div id="home-carousel" class="relative isolate h-[420px] overflow-hidden rounded-[2rem] border border-white/20 bg-[#082e29] shadow-[0_35px_90px_rgba(3,18,18,0.45)] sm:h-[500px] lg:h-[560px]" role="region" aria-roledescription="carousel" aria-label="Treasureland school and community">
+                            <img id="home-carousel-image-a" class="home-carousel-image is-active" src="assets/images/campus/school-view/WhatsApp Image 2026-10-13 at 11.20.01 AM.jpeg" alt="School buildings and grounds at Treasureland" fetchpriority="high">
+                            <img id="home-carousel-image-b" class="home-carousel-image" alt="" aria-hidden="true">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#061f1a]/95 via-[#061f1a]/20 to-[#061f1a]/10"></div>
+                            <div id="home-carousel-caption" class="home-carousel-caption absolute inset-x-0 bottom-0 p-6 text-white sm:p-8" aria-live="off">
+                                <span id="home-carousel-eyebrow" class="text-xs font-bold uppercase tracking-[0.18em] text-[#f5e9c4]">Our campus</span>
+                                <h2 id="home-carousel-title" class="mt-3 max-w-xl text-2xl font-black leading-tight sm:text-3xl">A welcoming place to learn and grow</h2>
+                                <p id="home-carousel-description" class="mt-3 max-w-xl text-sm leading-6 text-slate-100 sm:text-base">A thoughtful start, a supportive community, and room for every child to discover what they can become.</p>
+                                <div class="mt-6 flex items-center justify-between gap-4">
+                                    <div id="home-carousel-dots" class="flex items-center gap-2" aria-label="Choose a featured story"></div>
+                                    <button id="home-carousel-toggle" type="button" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5e9c4]" aria-label="Pause slideshow" aria-pressed="false">
+                                        <i class="fas fa-pause" aria-hidden="true"></i>
+                                    </button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="absolute -top-5 right-5 hidden md:block bg-[#0e5d46] text-white rounded-2xl shadow-xl p-4 max-w-[210px] border border-white/10">
-                            <div class="text-[10px] uppercase tracking-[0.2em] text-[#d9e7e2] mb-2">Admissions</div>
-                            <div class="text-xl font-black leading-tight">Open for 2026/2027</div>
                         </div>
                     </div>
                 </div>
@@ -644,7 +674,7 @@
 
                 <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
                     <article class="program-card card-hover bg-white rounded-[1.5rem] overflow-hidden">
-                        <img src="img2.jpeg" alt="Montessori academic programme" class="h-52 w-full object-cover">
+                        <img src="assets/images/campus/buildings/img2.jpeg" alt="Montessori academic programme" class="h-52 w-full object-cover">
                         <div class="p-6">
                             <div class="inline-flex items-center rounded-full bg-[#edf9f5] px-3 py-1 text-xs font-semibold text-[#0e5d46] mb-4">Montessori</div>
                             <h3 class="text-2xl font-bold text-slate-900 mb-3">Montessori Academic</h3>
@@ -653,7 +683,7 @@
                     </article>
 
                     <article class="program-card card-hover bg-white rounded-[1.5rem] overflow-hidden">
-                        <img src="img3.jpeg" alt="Creche programme" class="h-52 w-full object-cover">
+                        <img src="assets/images/campus/buildings/img3.jpeg" alt="Creche programme" class="h-52 w-full object-cover">
                         <div class="p-6">
                             <div class="inline-flex items-center rounded-full bg-[#edf9f5] px-3 py-1 text-xs font-semibold text-[#0e5d46] mb-4">Early Years</div>
                             <h3 class="text-2xl font-bold text-slate-900 mb-3">Creche</h3>
@@ -662,7 +692,7 @@
                     </article>
 
                     <article class="program-card card-hover bg-white rounded-[1.5rem] overflow-hidden">
-                        <img src="img4.jpeg" alt="Preschool programme" class="h-52 w-full object-cover">
+                        <img src="assets/images/campus/buildings/img4.jpeg" alt="Preschool programme" class="h-52 w-full object-cover">
                         <div class="p-6">
                             <div class="inline-flex items-center rounded-full bg-[#edf9f5] px-3 py-1 text-xs font-semibold text-[#0e5d46] mb-4">Preschool</div>
                             <h3 class="text-2xl font-bold text-slate-900 mb-3">Preparatory &amp; Playgroup</h3>
@@ -671,7 +701,7 @@
                     </article>
 
                     <article class="program-card card-hover bg-white rounded-[1.5rem] overflow-hidden">
-                        <img src="img5.jpeg" alt="Primary school programme" class="h-52 w-full object-cover">
+                        <img src="assets/images/campus/buildings/img5.jpeg" alt="Primary school programme" class="h-52 w-full object-cover">
                         <div class="p-6">
                             <div class="inline-flex items-center rounded-full bg-[#edf9f5] px-3 py-1 text-xs font-semibold text-[#0e5d46] mb-4">Primary</div>
                             <h3 class="text-2xl font-bold text-slate-900 mb-3">Primary School</h3>
@@ -686,7 +716,7 @@
             <div class="container mx-auto px-6">
                 <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-10 items-center">
                     <div class="relative">
-                        <img src="img6.jpeg" alt="Students in a classroom setting" class="rounded-[2rem] w-full h-[500px] object-cover shadow-[0_30px_80px_rgba(10,71,58,0.18)]">
+                        <img src="assets/images/campus/buildings/img6.jpeg" alt="Students in a classroom setting" class="rounded-[2rem] w-full h-[500px] object-cover shadow-[0_30px_80px_rgba(10,71,58,0.18)]">
                         <div class="absolute -bottom-5 right-5 bg-[#0e5d46] text-white rounded-2xl p-5 shadow-xl max-w-xs">
                             <div class="text-3xl font-black">4.9/5</div>
                             <div class="text-sm text-slate-200">Parent satisfaction</div>
@@ -769,19 +799,19 @@
                 </div>
                 <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
                     <a href="campus-life.html#creche" class="group relative overflow-hidden rounded-2xl shadow-sm">
-                        <img src="creche department/WhatsApp Image 2026-10-13 at 11.19.57 AM (2).jpeg" alt="A peek inside the creche classroom" class="h-44 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                        <img src="assets/images/campus/creche/WhatsApp Image 2026-10-13 at 11.19.57 AM (2).jpeg" alt="A peek inside the creche classroom" class="h-44 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-4 pb-3 pt-8 font-semibold text-white">Creche</span>
                     </a>
                     <a href="campus-life.html#sports" class="group relative overflow-hidden rounded-2xl shadow-sm">
-                        <img src="school field/WhatsApp Image 2026-10-13 at 11.19.23 AM.jpeg" alt="A peek at the school sports field" class="h-44 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                        <img src="assets/images/campus/sports-field/WhatsApp Image 2026-10-13 at 11.19.23 AM.jpeg" alt="A peek at the school sports field" class="h-44 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-4 pb-3 pt-8 font-semibold text-white">Sports Field &amp; Play</span>
                     </a>
                     <a href="campus-life.html#playgroup" class="group relative overflow-hidden rounded-2xl shadow-sm">
-                        <img src="play group classroom/WhatsApp Image 2026-10-13 at 11.20.00 AM.jpeg" alt="A peek inside the playgroup classroom" class="h-44 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                        <img src="assets/images/campus/play-group/WhatsApp Image 2026-10-13 at 11.20.00 AM.jpeg" alt="A peek inside the playgroup classroom" class="h-44 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-4 pb-3 pt-8 font-semibold text-white">Playgroup</span>
                     </a>
                     <a href="campus-life.html#health-bay" class="group relative overflow-hidden rounded-2xl shadow-sm">
-                        <img src="health bay/WhatsApp Image 2026-10-13 at 11.19.59 AM.jpeg" alt="A peek inside the school health bay" class="h-44 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                        <img src="assets/images/campus/health-bay/WhatsApp Image 2026-10-13 at 11.19.59 AM.jpeg" alt="A peek inside the school health bay" class="h-44 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-4 pb-3 pt-8 font-semibold text-white">Health Bay</span>
                     </a>
                 </div>
@@ -885,7 +915,7 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center mb-4">
-                        <img src="TES-Logo-nobg.png" alt="TES Logo" class="h-10 w-auto mr-3">
+                        <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-10 w-auto mr-3">
                         <div>
                             <div class="text-xl font-black">TES</div>
                             <div class="text-xs text-slate-300">Treasureland Elementary</div>
@@ -931,6 +961,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

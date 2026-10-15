@@ -36,7 +36,7 @@
     ].map((filename) => ({
         name: filename.replace(/\.[^.]+$/, ''),
         role: 'Teacher',
-        image: `Teachers/${filename}`
+        image: `assets/images/staff/teachers/${filename}`
     }));
 
     const headsOfDepartment = [
@@ -51,24 +51,42 @@
     ].map((filename) => ({
         name: filename.replace(/\.[^.]+$/, ''),
         role: 'Head of Department',
-        image: `HODs/${filename}`
+        image: `assets/images/staff/heads-of-department/${filename}`
     }));
 
     const founders = [
         {
             name: 'Mr. R.A. Ogunyemi',
             role: 'Founder',
-            image: 'Founders/Mr. R.A. Ogunyemi (Founder).jpg'
+            image: 'assets/images/staff/founders/Mr. R.A. Ogunyemi (Founder).jpg'
         },
         {
             name: 'Mrs. E.E. Ogunyemi',
             role: 'Founder & Director',
-            image: 'Founders/Mrs. E.E. Ogunyemi (Founder_Director).jpg'
+            image: 'assets/images/staff/founders/Mrs. E.E. Ogunyemi (Founder_Director).jpg'
         },
         {
             name: 'Mr. Abimbola Ogunyemi',
             role: 'Manager',
-            image: 'Founders/Mr. Abimbola Ogunyemi (Manager).jpg'
+            image: 'assets/images/staff/founders/Mr. Abimbola Ogunyemi (Manager).jpg'
+        }
+    ];
+
+    const administrativeStaff = [
+        {
+            name: 'Atobatee Gloria Mojisola',
+            role: 'Administrative Staff',
+            image: 'assets/images/staff/admin/Atobatee Gloria Mojisola.jpg'
+        },
+        {
+            name: 'Mrs. Okoh Esther',
+            role: 'Administrative Staff',
+            image: 'assets/images/staff/admin/Mrs. Okoh Esther.jpg'
+        },
+        {
+            name: 'Titilayo Mary Fanoiki',
+            role: 'Nurse',
+            image: null
         }
     ];
 
@@ -76,10 +94,10 @@
         {
             name: 'Mrs. O.R Olaosebikan',
             role: 'Head of Primary School',
-            image: 'Head of Schools/Mrs. O.R Olaosebikan (Head of Primary School).jpg'
+            image: 'assets/images/staff/heads-of-schools/Mrs. O.R Olaosebikan (Head of Primary School).jpg'
         },
         {
-            name: 'Name to be announced',
+            name: 'Mrs. O.O. Olusegun',
             role: 'Head of Preschools',
             image: null
         }
@@ -139,6 +157,7 @@
             createGroup('Founders & Management', founders),
             createGroup('Heads of Schools', headsOfSchools),
             createGroup('Heads of Department', headsOfDepartment),
+            createGroup('Administrative Staff', administrativeStaff),
             createGroup('Teachers', teachers)
         );
     } else {
