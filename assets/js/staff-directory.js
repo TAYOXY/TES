@@ -1,4 +1,25 @@
 (() => {
+    const teacherProfiles = {
+        'Agunloye Ruth.jpeg': { role: 'Assistant Class Teacher' },
+        'Ayantola Kafayat Adenike.jpeg': { role: 'Class Teacher' },
+        'Mrs Oduwole oluwatoyin.png': {
+            name: 'Mrs. Oduwole Oluwatoyin',
+            role: 'Assistant Class Teacher'
+        },
+        'OKUNORE OLUWAYOMI ANUOLUWAPO.png': {
+            name: 'Okunore Oluwayomi Anuoluwapo',
+            role: 'Teacher'
+        },
+        'Okunowo Olatunde Solomon.jpg': {
+            name: 'Olatunde Solomon Okunowo',
+            role: 'Teacher/Coach'
+        },
+        'Omoseebi Olumide John.jpg': { role: 'Art & Craft/Teacher' },
+        'Olakayode Olalekan Tomiwa.png': { role: 'Assistant Class Teacher' },
+        'Osineye Funmilola Abiodun.jpeg': { role: 'Assistant Class Teacher' },
+        'Solaru Rashidat Adebowale.jpg': { role: 'Assistant Teacher' }
+    };
+
     const teachers = [
         'Adebanjo Bushrah Adeayo.jpeg',
         'Adekoya Taiwo Omolayo.png',
@@ -23,6 +44,7 @@
         'Mrs Oduwole oluwatoyin.png',
         'Mrs Ogungbemi Abolanle O..jpg',
         'Ogunbiyi Oluwabukola Esther.jpg',
+        'OKUNORE OLUWAYOMI ANUOLUWAPO.png',
         'Okunowo Olatunde Solomon.jpg',
         'Olakayode Olalekan Tomiwa.png',
         'Oluwabusayo Abidemi.jpeg',
@@ -33,11 +55,20 @@
         'Solaru Rashidat Adebowale.jpg',
         'Talabi Olayinka.jpg',
         'Temitope Toluwase.png'
-    ].map((filename) => ({
-        name: filename.replace(/\.[^.]+$/, ''),
-        role: 'Teacher',
-        image: `assets/images/staff/teachers/${filename}`
-    }));
+    ].map((filename) => {
+        const profile = teacherProfiles[filename] ?? {};
+        return {
+            name: profile.name ?? filename.replace(/\.[^.]+$/, ''),
+            role: profile.role ?? 'Teacher',
+            image: `assets/images/staff/teachers/${filename}`
+        };
+    });
+
+    teachers.push({
+        name: 'Mr. Alebiosu OluwaSeun',
+        role: 'Music Teacher',
+        image: null
+    });
 
     const headsOfDepartment = [
         'Badejo Mary Oluwafunke.jpg',
@@ -67,7 +98,7 @@
         },
         {
             name: 'Mr. Abimbola Ogunyemi',
-            role: 'Manager',
+            role: 'Manager & Director of Studies',
             image: 'assets/images/staff/founders/Mr. Abimbola Ogunyemi (Manager).jpg'
         }
     ];
@@ -93,12 +124,12 @@
     const headsOfSchools = [
         {
             name: 'Mrs. O.R Olaosebikan',
-            role: 'Head of Primary School',
+            role: 'Head of Primary Schools',
             image: 'assets/images/staff/heads-of-schools/Mrs. O.R Olaosebikan (Head of Primary School).jpg'
         },
         {
             name: 'Mrs. O.O. Olusegun',
-            role: 'Head of Preschools',
+            role: 'Head of Preschools/Sport Director',
             image: null
         }
     ];
@@ -155,9 +186,9 @@
     if (directory.dataset.directoryPage === 'staff') {
         content.append(
             createGroup('Founders & Management', founders),
+            createGroup('Administrative Staff', administrativeStaff),
             createGroup('Heads of Schools', headsOfSchools),
             createGroup('Heads of Department', headsOfDepartment),
-            createGroup('Administrative Staff', administrativeStaff),
             createGroup('Teachers', teachers)
         );
     } else {
