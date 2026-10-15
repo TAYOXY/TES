@@ -74,6 +74,8 @@
     </style>
     <link rel="stylesheet" href="assets/css/headlines.css">
     <script src="assets/js/headlines.js" defer></script>
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <script src="assets/js/navigation.js" defer></script>
 </head>
 <body>
     <nav class="sticky top-0 z-50 border-b border-slate-100 bg-white/95 shadow-sm backdrop-blur-md">
@@ -214,22 +216,5 @@
         <span class="mx-2">·</span><span>&copy; 2026</span>
     </footer>
 
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-            mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
-            mobileMenu.classList.toggle('hidden', isExpanded);
-        });
-
-        mobileMenu.querySelectorAll('a').forEach((link) => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenuButton.setAttribute('aria-expanded', 'false');
-            });
-        });
-    </script>
 </body>
 </html>

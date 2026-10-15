@@ -1,19 +1,4 @@
-// Mobile menu toggle
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const logoButton = document.getElementById('logo-button');
 const mobileMenu = document.getElementById('mobile-menu');
-
-if (mobileMenuButton) {
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-}
-
-if (logoButton) {
-    logoButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-}
 
 // Mobile Apply Now dropdown toggle
 document.addEventListener('click', (e) => {
@@ -29,6 +14,7 @@ document.addEventListener('click', (e) => {
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
+    if (!navbar) return;
     if (window.scrollY > 50) {
         navbar.classList.add('shadow-lg');
     } else {
@@ -39,16 +25,19 @@ window.addEventListener('scroll', () => {
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+
+        const targetId = decodeURIComponent(href.slice(1));
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            // Close mobile menu if open
-            mobileMenu.classList.add('hidden');
-        }
+        target.scrollIntoView({
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+            block: 'start'
+        });
+        mobileMenu?.classList.add('hidden');
     });
 });
 

@@ -291,6 +291,8 @@
     <link rel="stylesheet" href="assets/css/headlines.css">
     <script src="assets/js/headlines.js" defer></script>
     <script src="assets/js/homepage-carousel.js" defer></script>
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <script src="assets/js/navigation.js" defer></script>
 </head>
 <body class="bg-stone-100 text-slate-900">
     <!-- Preloader -->
@@ -304,7 +306,7 @@
     </div>
 
     <div class="bg-[#0a473a] text-white text-center text-sm font-medium py-3 px-4">
-        Admissions for the 2026/2027 academic year are now open • <a href="#contact" class="underline font-semibold">Book a campus tour</a>
+        Admissions for the 2026/2027 academic year are now open • <a href="#campus-visit" class="underline font-semibold">Book a campus tour</a>
     </div>
 
     <!-- Navigation -->
@@ -867,7 +869,7 @@
                                 <a href="registration-form.html" class="inline-flex items-center justify-center bg-[#d7b15d] text-[#1f2a37] px-7 py-3.5 rounded-full font-bold hover:bg-[#e8c980] transition">
                                     <i class="fas fa-pencil-alt mr-2"></i> Apply now
                                 </a>
-                                <a href="admissions.html" class="inline-flex items-center justify-center border border-white/30 bg-white/5 text-white px-7 py-3.5 rounded-full font-bold hover:bg-white hover:text-[#0a473a] transition">
+                                <a href="#campus-visit" class="inline-flex items-center justify-center border border-white/30 bg-white/5 text-white px-7 py-3.5 rounded-full font-bold hover:bg-white hover:text-[#0a473a] transition">
                                     <i class="fas fa-calendar-alt mr-2"></i> Schedule a visit
                                 </a>
                             </div>
@@ -905,6 +907,50 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="campus-visit" class="scroll-mt-24 bg-white py-16 md:py-20">
+            <div class="container mx-auto px-6">
+                <div class="mx-auto max-w-3xl rounded-[2rem] border border-slate-100 bg-[#f8f8f5] p-6 shadow-lg md:p-10">
+                    <div class="text-xs font-bold uppercase tracking-[0.16em] text-[#0e5d46]">Plan your visit</div>
+                    <h2 class="mt-3 text-3xl font-black text-slate-900">Schedule a campus visit</h2>
+                    <p class="mt-3 leading-7 text-slate-600">Choose a date and a convenient time between 9:00 AM and 12:00 PM. Your email app will open with your request addressed to our school team.</p>
+
+                    <form id="campus-visit-form" class="mt-8 grid gap-5 sm:grid-cols-2">
+                        <div>
+                            <label for="visit-name" class="mb-2 block text-sm font-semibold text-slate-700">Your name</label>
+                            <input id="visit-name" name="name" type="text" autocomplete="name" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-[#0e5d46] focus:outline-none focus:ring-2 focus:ring-[#0e5d46]/20">
+                        </div>
+                        <div>
+                            <label for="visit-email" class="mb-2 block text-sm font-semibold text-slate-700">Email address</label>
+                            <input id="visit-email" name="email" type="email" autocomplete="email" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-[#0e5d46] focus:outline-none focus:ring-2 focus:ring-[#0e5d46]/20">
+                        </div>
+                        <div>
+                            <label for="visit-phone" class="mb-2 block text-sm font-semibold text-slate-700">Phone number</label>
+                            <input id="visit-phone" name="phone" type="tel" autocomplete="tel" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-[#0e5d46] focus:outline-none focus:ring-2 focus:ring-[#0e5d46]/20">
+                        </div>
+                        <div>
+                            <label for="visit-date" class="mb-2 block text-sm font-semibold text-slate-700">Preferred date</label>
+                            <input id="visit-date" name="date" type="date" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-[#0e5d46] focus:outline-none focus:ring-2 focus:ring-[#0e5d46]/20">
+                        </div>
+                        <div>
+                            <label for="visit-time" class="mb-2 block text-sm font-semibold text-slate-700">Preferred time</label>
+                            <input id="visit-time" name="time" type="time" min="09:00" max="12:00" step="60" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-[#0e5d46] focus:outline-none focus:ring-2 focus:ring-[#0e5d46]/20">
+                            <p class="mt-1 text-xs text-slate-500">Available between 9:00 AM and 12:00 PM.</p>
+                        </div>
+                        <div>
+                            <label for="visit-interest" class="mb-2 block text-sm font-semibold text-slate-700">What would you like to learn about? <span class="font-normal text-slate-500">(optional)</span></label>
+                            <input id="visit-interest" name="interest" type="text" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-[#0e5d46] focus:outline-none focus:ring-2 focus:ring-[#0e5d46]/20">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <button type="submit" class="inline-flex items-center justify-center rounded-full bg-[#0e5d46] px-7 py-3.5 font-bold text-white transition hover:bg-[#0a473a]">
+                                <i class="fas fa-paper-plane mr-2" aria-hidden="true"></i> Send visit request
+                            </button>
+                            <p class="mt-3 text-sm text-slate-500">Submitting opens your email application; please send the prepared message to complete your request.</p>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
@@ -962,5 +1008,6 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/campus-visit.js"></script>
 </body>
 </html>

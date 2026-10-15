@@ -8,6 +8,7 @@
     <title>Inter-house Sports Gallery | Treasureland Elementary School</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -15,6 +16,7 @@
         * { font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
     </style>
+    <script src="assets/js/navigation.js" defer></script>
 </head>
 <body class="bg-[#f6f7f4] text-slate-900">
     <nav class="sticky top-0 z-50 border-b border-slate-100 bg-white/95 shadow-sm backdrop-blur-md">
@@ -26,7 +28,20 @@
                     <span class="text-[10px] text-slate-600">Treasureland Elementary School</span>
                 </span>
             </a>
-            <a href="campus-life.html" class="font-semibold text-[#0e5d46] hover:text-[#0a473a]"><i class="fas fa-arrow-left mr-2"></i>Campus Life Gallery</a>
+            <div class="hidden items-center gap-6 text-sm font-semibold text-slate-700 md:flex">
+                <a href="index.html" class="hover:text-[#0e5d46]">Home</a>
+                <a href="news-and-events.html#inter-house-sports" class="hover:text-[#0e5d46]">News &amp; Events</a>
+                <a href="campus-life.html" class="text-[#0e5d46] hover:text-[#0a473a]">Campus Life Gallery</a>
+            </div>
+            <button type="button" id="mobile-menu-button" class="text-slate-700 md:hidden" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+                <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="container mx-auto hidden px-6 pb-4 md:hidden">
+            <a href="index.html" class="block py-2 text-slate-700">Home</a>
+            <a href="news-and-events.html#inter-house-sports" class="block py-2 text-slate-700">News &amp; Events</a>
+            <a href="campus-life.html" class="block py-2 font-semibold text-[#0e5d46]">Campus Life Gallery</a>
+            <a href="admissions.html" class="block py-2 text-slate-700">Admissions</a>
         </div>
     </nav>
     <main>
