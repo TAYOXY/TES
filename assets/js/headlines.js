@@ -13,14 +13,14 @@
                 <div class="headlines-window">
                     <div class="headlines-track">
                         <div class="headlines-group">
-                            <a href="news-and-events.html#prefects"><span style="color:#d7b15d">New</span> Meet the 2026/2027 student prefects <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                            <a href="news-and-events.html#admissions"><span style="color:#d7b15d">Admissions</span> Applications are open for the 2026/2027 academic year <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                            <a href="news-and-events.html#campus-tours"><span style="color:#d7b15d">Visit TES</span> Book a campus tour and discover our school <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a href="news-and-events.html#prefects"><span style="color:#fbbf24">New</span> Meet the 2026/2027 student prefects <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a href="news-and-events.html#admissions"><span style="color:#fcd34d">Admissions</span> Applications are open for the 2026/2027 academic year <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a href="news-and-events.html#campus-tours"><span style="color:#fef08a">Visit TES</span> Book a campus tour and discover our school <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                         </div>
                         <div class="headlines-group" aria-hidden="true">
-                            <a href="news-and-events.html#prefects" tabindex="-1"><span style="color:#d7b15d">New</span> Meet the 2026/2027 student prefects <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                            <a href="news-and-events.html#admissions" tabindex="-1"><span style="color:#d7b15d">Admissions</span> Applications are open for the 2026/2027 academic year <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                            <a href="news-and-events.html#campus-tours" tabindex="-1"><span style="color:#d7b15d">Visit TES</span> Book a campus tour and discover our school <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a href="news-and-events.html#prefects" tabindex="-1"><span style="color:#fbbf24">New</span> Meet the 2026/2027 student prefects <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a href="news-and-events.html#admissions" tabindex="-1"><span style="color:#fcd34d">Admissions</span> Applications are open for the 2026/2027 academic year <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a href="news-and-events.html#campus-tours" tabindex="-1"><span style="color:#fef08a">Visit TES</span> Book a campus tour and discover our school <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>

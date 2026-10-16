@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
-        :root {
+         :root {
             --brand-green: #0e5d46;
             --brand-green-deep: #0a473a;
             --brand-gold: #d7b15d;
@@ -25,35 +25,35 @@
             --white: #ffffff;
             --shadow-soft: 0 24px 60px rgba(10, 71, 58, 0.12);
         }
-
+        
         * {
             font-family: 'Inter', sans-serif;
         }
-
+        
         html {
             scroll-behavior: smooth;
         }
-
+        
         body {
             background: #f6f7f4;
             color: var(--brand-slate);
         }
-
+        
         .hero-shell {
             background: linear-gradient(115deg, rgba(5, 29, 25, 0.90), rgba(12, 75, 60, 0.82) 48%, rgba(17, 94, 73, 0.76));
         }
-
+        
         .hero-card {
             background: rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,0.10);
+            border: 1px solid rgba(255, 255, 255, 0.10);
             box-shadow: 0 40px 80px rgba(5, 28, 22, 0.22);
         }
-
+        
         .nav-link {
             position: relative;
         }
-
+        
         .nav-link::after {
             content: "";
             position: absolute;
@@ -66,15 +66,15 @@
             transform-origin: center;
             transition: transform 0.2s ease;
         }
-
+        
         .nav-link:hover::after {
             transform: scaleX(1);
         }
-
+        
         .section-shell {
             position: relative;
         }
-
+        
         .section-tag {
             position: relative;
             display: inline-flex;
@@ -86,7 +86,7 @@
             font-weight: 700;
             color: var(--brand-green);
         }
-
+        
         .section-tag::before {
             content: "";
             width: 2.5rem;
@@ -94,77 +94,83 @@
             background: linear-gradient(90deg, var(--brand-gold), var(--brand-green));
             border-radius: 999px;
         }
-
+        
         .hero-badge {
             letter-spacing: 0.18em;
             text-transform: uppercase;
             font-size: 0.72rem;
             font-weight: 700;
             color: #f5e9c4;
-            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
         }
-
+        
         .feature-panel {
-            background: linear-gradient(180deg, rgba(255,255,255,0.97), rgba(246,249,245,0.96));
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(246, 249, 245, 0.96));
             border: 1px solid rgba(14, 93, 70, 0.08);
             box-shadow: 0 14px 32px rgba(11, 61, 48, 0.04);
             position: relative;
             overflow: hidden;
         }
-
+        
         .feature-panel::before {
             content: "";
             position: absolute;
             inset: 0 auto auto 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(90deg, var(--brand-gold), rgba(215,177,93,0));
+            background: linear-gradient(90deg, var(--brand-gold), rgba(215, 177, 93, 0));
         }
-
+        
         .program-card {
             border: 1px solid rgba(15, 73, 58, 0.08);
             box-shadow: 0 18px 38px rgba(10, 71, 58, 0.06);
             background: linear-gradient(180deg, #ffffff 0%, #fbfcfa 100%);
             overflow: hidden;
         }
-
+        
         .program-card h3 {
             letter-spacing: -0.03em;
         }
-
+        
         .stats-tile {
-            background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
         }
-
+        
         .card-hover {
             transition: all 0.3s ease;
         }
-
+        
         .card-hover:hover {
             transform: translateY(-5px);
             box-shadow: 0 18px 30px rgba(8, 50, 40, 0.12);
         }
-
+        
         .fade-in {
             animation: fadeIn 0.8s ease-in;
         }
-
+        
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-
+        
         .gallery-item {
             transition: all 0.3s ease;
             cursor: pointer;
         }
-
+        
         .gallery-item:hover {
             transform: translateY(-5px) scale(1.01);
         }
-
+        
         .home-carousel-image {
             position: absolute;
             inset: 0;
@@ -174,50 +180,50 @@
             opacity: 0;
             transition: opacity 800ms ease;
         }
-
+        
         .home-carousel-image.is-active {
             opacity: 1;
         }
-
+        
         .home-carousel-caption {
             transition: opacity 350ms ease, transform 350ms ease;
         }
-
+        
         .home-carousel-caption.is-changing {
             opacity: 0;
             transform: translateY(0.5rem);
         }
-
+        
         .home-carousel-dot[aria-current="true"] {
             width: 1.75rem;
             background: #f5e9c4;
         }
-
+        
         .facility-card {
             border: 1px solid rgba(15, 73, 58, 0.08);
             box-shadow: 0 18px 38px rgba(10, 71, 58, 0.06);
             background: #ffffff;
         }
-
+        
         .facility-more summary {
             cursor: pointer;
             list-style: none;
         }
-
+        
         .facility-more summary::-webkit-details-marker {
             display: none;
         }
-
+        
         .facility-more[open] .facility-more-icon {
             transform: rotate(180deg);
         }
-
+        
         .headlines-track {
             display: flex;
             width: max-content;
             animation: headlines-scroll 36s linear infinite;
         }
-
+        
         .headlines-group {
             display: flex;
             flex-shrink: 0;
@@ -226,66 +232,73 @@
             padding-right: 2.5rem;
             white-space: nowrap;
         }
-
+        
         .headlines-group a {
             color: white;
             font-size: 0.875rem;
             font-weight: 600;
         }
-
+        
         .headlines-group a:hover {
             color: #f5e9c4;
         }
-
+        
         .headlines-window:hover .headlines-track,
         .headlines-window:focus-within .headlines-track {
             animation-play-state: paused;
         }
-
+        
         @keyframes headlines-scroll {
-            to { transform: translateX(-50%); }
+            to {
+                transform: translateX(-50%);
+            }
         }
-
+        
         @media (prefers-reduced-motion: reduce) {
             .headlines-track {
                 animation: none;
             }
-
             .home-carousel-image,
             .home-carousel-caption {
                 transition: none;
             }
         }
-
+        
         .navbar-scroll {
             transition: all 0.3s ease;
         }
-
+        
         .text-gradient {
             background: linear-gradient(135deg, #0e5d46 0%, #d7b15d 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
+        
         body:not(.loaded) {
             opacity: 0;
         }
-
+        
         body.loaded {
             opacity: 1;
             transition: opacity 0.3s ease;
         }
-
+        
         body.keyboard-navigation *:focus {
             outline: 2px solid var(--brand-green);
             outline-offset: 2px;
         }
-
+        
         @keyframes loading {
-            0% { width: 0%; }
-            50% { width: 70%; }
-            100% { width: 100%; }
+            0% {
+                width: 0%;
+            }
+            50% {
+                width: 70%;
+            }
+            100% {
+                width: 100%;
+            }
         }
     </style>
     <link rel="stylesheet" href="assets/css/headlines.css">
@@ -294,6 +307,7 @@
     <link rel="stylesheet" href="assets/css/navigation.css">
     <script src="assets/js/navigation.js" defer></script>
 </head>
+
 <body class="bg-stone-100 text-slate-900">
     <!-- Preloader -->
     <div id="preloader" class="fixed inset-0 bg-white z-[100] flex items-center justify-center">
@@ -324,7 +338,7 @@
                     <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-10 w-auto mr-3">
                     <span class="flex flex-col items-start leading-none">
                         <span class="text-xl font-black text-slate-900">TES</span>
-                        <span class="text-[10px] text-slate-600">Treasureland Elementary School</span>
+                    <span class="text-[10px] text-slate-600">Treasureland Elementary School</span>
                     </span>
                 </a>
 
@@ -335,16 +349,13 @@
                         </button>
                         <div class="absolute top-full left-0 mt-3 w-52 bg-white rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-slate-100">
                             <a href="founders-message.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
-                                Founder's Message
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2"> Founder's Message
                             </a>
                             <a href="our-history.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
-                                Our History
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2"> Our History
                             </a>
                             <a href="montessori-philosophy.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
-                                Montessori Philosophy
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2"> Montessori Philosophy
                             </a>
                         </div>
                     </div>
@@ -354,16 +365,13 @@
                         </button>
                         <div class="absolute top-full left-0 mt-3 w-52 bg-white rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-slate-100">
                             <a href="our-programs.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
-                                Our Programs
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2"> Our Programs
                             </a>
                             <a href="our-staff.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
-                                Our Staff
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2"> Our Staff
                             </a>
                             <a href="campus-life.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
-                                Campus Life
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2"> Campus Life
                             </a>
                         </div>
                     </div>
@@ -373,16 +381,13 @@
                         </button>
                         <div class="absolute top-full left-0 mt-3 w-52 bg-white rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-slate-100">
                             <a href="admissions.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
-                                Admissions
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2"> Admissions
                             </a>
                             <a href="classes-and-teachers.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
-                                Classes and Teachers
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2"> Classes and Teachers
                             </a>
                             <a href="tes-portal.html" class="flex items-center px-4 py-3 text-slate-700 hover:bg-[#edf9f5] hover:text-[#0e5d46]">
-                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2">
-                                TES Portal
+                                <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-4 w-auto mr-2"> TES Portal
                             </a>
                         </div>
                     </div>
@@ -443,44 +448,34 @@
 
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
                 <a href="founders-message.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
-                    Founder's Message
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2"> Founder's Message
                 </a>
                 <a href="our-history.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
-                    Our History
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2"> Our History
                 </a>
                 <a href="montessori-philosophy.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
-                    Montessori Philosophy
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2"> Montessori Philosophy
                 </a>
                 <a href="our-programs.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
-                    Our Programs
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2"> Our Programs
                 </a>
                 <a href="our-staff.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
-                    Our Staff
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2"> Our Staff
                 </a>
                 <a href="campus-life.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
-                    Campus Life
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2"> Campus Life
                 </a>
                 <a href="admissions.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
-                    Admissions
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2"> Admissions
                 </a>
                 <a href="classes-and-teachers.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
-                    Classes and Teachers
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2"> Classes and Teachers
                 </a>
                 <a href="tes-portal.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
-                    TES Portal
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2"> TES Portal
                 </a>
                 <a href="news-and-events.html#updates" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
-                    News &amp; Events
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2"> News &amp; Events
                 </a>
                 <a href="news-and-events.html#prefects" class="flex items-center py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">
                     2026/2027 Prefects
@@ -492,8 +487,7 @@
                     Campus Tours
                 </a>
                 <a href="extracurricular-activities.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
-                    Extra-curricular Activities
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2"> Extra-curricular Activities
                 </a>
                 <a href="extracurricular-activities.html#music" class="block py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">Music</a>
                 <a href="extracurricular-activities.html#art-creativity" class="block py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">Art &amp; Creativity</a>
@@ -504,12 +498,10 @@
                 <a href="extracurricular-activities.html#sports-games" class="block py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">Sports &amp; Games</a>
                 <a href="extracurricular-activities.html#sewing" class="block py-2 pl-8 text-slate-700 hover:text-[#0e5d46]">Seamstress &amp; Sewing</a>
                 <a href="campus-life.html" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
-                    Gallery
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2"> Gallery
                 </a>
                 <a href="#contact" class="flex items-center py-2 text-slate-700 hover:text-[#0e5d46]">
-                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2">
-                    Contact Us
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="TES Logo" class="h-3 w-auto mr-2"> Contact Us
                 </a>
                 <div class="bg-[#0e5d46] text-white px-4 py-3 rounded-full mt-4">
                     <button type="button" class="w-full text-left flex items-center justify-between text-sm font-semibold" onclick="this.parentElement.classList.toggle('expanded')">
@@ -537,14 +529,14 @@
             <div class="headlines-window min-w-0 flex-1 overflow-hidden py-3">
                 <div class="headlines-track">
                     <div class="headlines-group">
-                        <a href="news-and-events.html#prefects"><span class="text-[#d7b15d]">New</span> Meet the 2026/2027 student prefects <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
-                        <a href="news-and-events.html#admissions"><span class="text-[#d7b15d]">Admissions</span> Applications are open for the 2026/2027 academic year <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
-                        <a href="news-and-events.html#campus-tours"><span class="text-[#d7b15d]">Visit TES</span> Book a campus tour and discover our school <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                        <a href="news-and-events.html#prefects"><span class="text-yellow-400">New</span> Meet the 2026/2027 student prefects <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                        <a href="news-and-events.html#admissions"><span class="text-yellow-300">Admissions</span> Applications are open for the 2026/2027 academic year <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                        <a href="news-and-events.html#campus-tours"><span class="text-yellow-200">Visit TES</span> Book a campus tour and discover our school <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
                     </div>
                     <div class="headlines-group" aria-hidden="true">
-                        <a href="news-and-events.html#prefects" tabindex="-1"><span class="text-[#d7b15d]">New</span> Meet the 2026/2027 student prefects <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
-                        <a href="news-and-events.html#admissions" tabindex="-1"><span class="text-[#d7b15d]">Admissions</span> Applications are open for the 2026/2027 academic year <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
-                        <a href="news-and-events.html#campus-tours" tabindex="-1"><span class="text-[#d7b15d]">Visit TES</span> Book a campus tour and discover our school <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                        <a href="news-and-events.html#prefects" tabindex="-1"><span class="text-yellow-400">New</span> Meet the 2026/2027 student prefects <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                        <a href="news-and-events.html#admissions" tabindex="-1"><span class="text-yellow-300">Admissions</span> Applications are open for the 2026/2027 academic year <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                        <a href="news-and-events.html#campus-tours" tabindex="-1"><span class="text-yellow-200">Visit TES</span> Book a campus tour and discover our school <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
                     </div>
                 </div>
             </div>
@@ -607,7 +599,8 @@
                                 <p id="home-carousel-description" class="mt-3 max-w-xl text-sm leading-6 text-slate-100 sm:text-base">A thoughtful start, a supportive community, and room for every child to discover what they can become.</p>
                                 <div class="mt-6 flex items-center justify-between gap-4">
                                     <div id="home-carousel-dots" class="flex items-center gap-2" aria-label="Choose a featured story"></div>
-                                    <button id="home-carousel-toggle" type="button" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5e9c4]" aria-label="Pause slideshow" aria-pressed="false">
+                                    <button id="home-carousel-toggle" type="button" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5e9c4]"
+                                        aria-label="Pause slideshow" aria-pressed="false">
                                         <i class="fas fa-pause" aria-hidden="true"></i>
                                     </button>
                                 </div>
@@ -1010,4 +1003,5 @@
     <script src="assets/js/script.js"></script>
     <script src="assets/js/campus-visit.js"></script>
 </body>
+
 </html>
